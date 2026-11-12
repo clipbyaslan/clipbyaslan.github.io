@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>clipbyaslan — Abdullah Aslan</title>
+<meta name="description" content="clipbyaslan — Abdullah Aslan. Düğün çekimi, dış çekim, müzik klibi ve sosyal medya yönetimi. Kamera arkasında da önünde de.">
+<meta property="og:title" content="clipbyaslan — Abdullah Aslan">
+<meta property="og:description" content="Düğün çekimi, dış çekim, müzik klibi ve sosyal medya yönetimi. İletişim: 0534 317 40 30">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050505'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23ff1f2d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050505; --bg2:#0d0d0d; --fg:#f2f0ec; --mute:#8a8782;
+  --red:#ff1f2d; --red2:#b3000c; --line:rgba(255,255,255,.12);
+  --display:'Anton',Impact,sans-serif; --body:'Manrope',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body.loading{overflow:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--red);color:#fff}
+@media (pointer:fine){body,a,button{cursor:none}}
+
+/* ---------- grain + scanlines ---------- */
+.grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 0.6s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(4%,-6%)}60%{transform:translate(-3%,7%)}80%{transform:translate(6%,2%)}100%{transform:translate(0,0)}}
+.scan{position:fixed;inset:0;z-index:89;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
+
+/* ---------- cursor ---------- */
+.cursor,.cursor-ring{position:fixed;top:0;left:0;z-index:200;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%)}
+.cursor{width:8px;height:8px;background:var(--red)}
+.cursor-ring{width:40px;height:40px;border:1px solid rgba(255,255,255,.5);transition:width .3s,height .3s,background .3s,border-color .3s;display:grid;place-items:center;font:700 10px var(--mono);letter-spacing:.1em;color:#fff}
+.cursor-ring.big{width:90px;height:90px;background:rgba(255,31,45,.9);border-color:transparent}
+@media (pointer:coarse){.cursor,.cursor-ring{display:none}}
+
+/* ---------- loader ---------- */
+.loader{position:fixed;inset:0;z-index:300;display:grid;place-items:center;background:#000}
+.loader .half{position:absolute;left:0;width:100%;height:50%;background:#000;transition:transform 1s cubic-bezier(.77,0,.18,1)}
+.loader .top{top:0}.loader .bot{bottom:0}
+.loader.out .top{transform:translateY(-100%)}.loader.out .bot{transform:translateY(100%)}
+.loader.out .leader{opacity:0;transform:scale(1.4)}
+.leader{position:relative;width:min(56vw,280px);aspect-ratio:1;z-index:2;transition:opacity .4s,transform .6s}
+.leader svg{width:100%;height:100%}
+.leader .num{position:absolute;inset:0;display:grid;place-items:center;font:120px/1 var(--display);color:#fff}
+.leader .sweep{transform-origin:100px 100px;animation:sweep 1s linear infinite}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.loader .skip{position:absolute;bottom:28px;z-index:3;font:11px var(--mono);letter-spacing:.3em;color:var(--mute)}
+
+/* ---------- nav ---------- */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--red);z-index:120;box-shadow:0 0 12px var(--red)}
+nav{position:fixed;top:0;left:0;right:0;z-index:110;display:flex;justify-content:space-between;align-items:center;padding:22px 5vw;mix-blend-mode:difference}
+.logo{font:24px var(--display);letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+.logo i{width:10px;height:10px;border-radius:50%;background:var(--red);animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.15}}
+.links{display:flex;gap:34px;font:600 13px var(--body);letter-spacing:.14em;text-transform:uppercase}
+.links a{position:relative;overflow:hidden;display:inline-block;height:1.2em}
+.links a span{display:block;transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.links a span:after{content:attr(data-t);position:absolute;left:0;top:100%;color:var(--red)}
+.links a:hover span{transform:translateY(-100%)}
+.burger{display:none;background:none;border:0;width:34px;height:20px;position:relative}
+.burger:before,.burger:after{content:"";position:absolute;left:0;width:100%;height:2px;background:#fff;transition:.4s}
+.burger:before{top:2px}.burger:after{bottom:2px}
+.burger.on:before{top:9px;transform:rotate(45deg)}.burger.on:after{bottom:9px;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;z-index:105;background:var(--red);clip-path:circle(0 at 100% 0);transition:clip-path .8s cubic-bezier(.77,0,.18,1);display:flex;flex-direction:column;justify-content:center;padding:0 8vw;gap:6px}
+.mobile-menu.on{clip-path:circle(150% at 100% 0)}
+.mobile-menu a{font:clamp(48px,14vw,90px)/1 var(--display);text-transform:uppercase;color:#000}
+@media (max-width:820px){.links{display:none}.burger{display:block}.vf .h3,.vf .h4{display:none}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100svh;min-height:600px;overflow:hidden;display:grid;place-items:center}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;pointer-events:none}
+.b1{width:50vw;height:50vw;background:var(--red2);top:-15vw;left:-10vw;animation:float1 14s ease-in-out infinite}
+.b2{width:40vw;height:40vw;background:#3a0005;bottom:-15vw;right:-10vw;animation:float2 18s ease-in-out infinite}
+@keyframes float1{50%{transform:translate(20vw,15vh) scale(1.2)}}
+@keyframes float2{50%{transform:translate(-18vw,-12vh) scale(.85)}}
+.vf{position:absolute;inset:clamp(70px,9vh,100px) 5vw clamp(30px,6vh,60px);pointer-events:none}
+.vf .c{position:absolute;width:34px;height:34px;border:2px solid rgba(255,255,255,.75)}
+.vf .tl{top:0;left:0;border-right:0;border-bottom:0}.vf .tr{top:0;right:0;border-left:0;border-bottom:0}
+.vf .bl{bottom:0;left:0;border-right:0;border-top:0}.vf .br{bottom:0;right:0;border-left:0;border-top:0}
+.vf .hud{position:absolute;font:12px var(--mono);letter-spacing:.15em;color:rgba(255,255,255,.8);display:flex;gap:10px;align-items:center}
+.vf .h1{top:18px;left:50px}.vf .h2{top:18px;right:50px}.vf .h3{bottom:18px;left:50px}.vf .h4{bottom:18px;right:50px}
+.rec{width:10px;height:10px;border-radius:50%;background:var(--red);animation:blink 1s infinite;box-shadow:0 0 10px var(--red)}
+.cross{position:absolute;top:50%;left:50%;width:26px;height:26px;transform:translate(-50%,-50%);opacity:.35}
+.cross:before,.cross:after{content:"";position:absolute;background:#fff}
+.cross:before{left:50%;top:0;width:1px;height:100%}.cross:after{top:50%;left:0;height:1px;width:100%}
+.hero-inner{position:relative;z-index:2;text-align:center;padding:0 4vw}
+.kicker{font:600 13px var(--mono);letter-spacing:.45em;text-transform:uppercase;color:var(--red);margin-bottom:18px;opacity:0;animation:fadeUp 1s .2s forwards paused}
+.big{font:clamp(70px,17vw,260px)/.86 var(--display);text-transform:uppercase;letter-spacing:-.01em}
+.big .row{display:block;overflow:hidden;white-space:nowrap}
+.big .ch{display:inline-block;transform:translateY(110%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards paused}
+.big .row.outline .ch{color:transparent;-webkit-text-stroke:2px var(--fg)}
+.started .kicker,.started .big .ch,.started .tag,.started .scroll{animation-play-state:running}
+@keyframes up{to{transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.glitch{position:relative}
+.glitch:hover{animation:glit .35s steps(2) 2}
+@keyframes glit{0%{text-shadow:4px 0 var(--red),-4px 0 #0ff;transform:translate(2px,-1px)}50%{text-shadow:-5px 0 var(--red),5px 0 #0ff;transform:translate(-2px,1px)}100%{text-shadow:none;transform:none}}
+.tag{margin-top:26px;font:300 clamp(15px,1.6vw,20px)/1.5 var(--body);color:#cfccc6;opacity:0;animation:fadeUp 1s 1.3s forwards paused}
+.tag b{color:#fff;font-weight:800}
+.scroll{position:absolute;bottom:clamp(50px,9vh,90px);left:50%;transform:translateX(-50%);z-index:3;font:11px var(--mono);letter-spacing:.3em;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:fadeUp 1s 1.8s forwards paused}
+.scroll i{width:1px;height:50px;background:linear-gradient(var(--red),transparent);animation:drip 1.6s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--red);color:#000;transform:rotate(-2.5deg) scale(1.05);margin:60px 0;overflow:hidden;white-space:nowrap;padding:16px 0;position:relative;z-index:3}
+.marquee.alt{background:var(--fg);transform:rotate(2deg) scale(1.05);margin-top:-110px}
+.track{display:inline-flex;gap:40px;font:clamp(32px,5vw,64px)/1 var(--display);text-transform:uppercase;animation:mq 22s linear infinite}
+.marquee.alt .track{animation-direction:reverse}
+.track span{display:flex;align-items:center;gap:40px}
+.track span:after{content:"✦";font-size:.6em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- generic section ---------- */
+section{position:relative;padding:clamp(90px,14vh,160px) 5vw}
+.label{font:600 12px var(--mono);letter-spacing:.4em;color:var(--red);text-transform:uppercase;display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.label:before{content:"";width:40px;height:1px;background:var(--red)}
+.h2{font:clamp(48px,8vw,120px)/.9 var(--display);text-transform:uppercase}
+.h2 em{font-style:normal;color:var(--red)}
+.reveal{opacity:0;transform:translateY(60px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.wipe{clip-path:inset(0 100% 0 0);transition:clip-path 1.2s cubic-bezier(.77,0,.18,1)}
+.wipe.in{clip-path:inset(0 0 0 0)}
+
+/* ---------- about ---------- */
+.about{display:grid;grid-template-columns:1fr 1.25fr;gap:7vw;align-items:center}
+.portrait{position:relative;aspect-ratio:4/5;background:linear-gradient(160deg,#1a1a1a,#060606);overflow:hidden;border:1px solid var(--line)}
+.portrait:before,.portrait:after{content:"";position:absolute;top:0;bottom:0;width:22px;background:#151515;z-index:2}
+.portrait:before{left:0}.portrait:after{right:0}
+.film-holes{position:absolute;top:0;bottom:0;width:22px;z-index:3;display:flex;flex-direction:column;justify-content:space-around;align-items:center;padding:8px 0}
+.film-holes.l{left:0}.film-holes.r{right:0}
+.film-holes i{width:10px;height:14px;border-radius:2px;background:var(--bg)}
+.mono{position:absolute;inset:0;display:grid;place-items:center;font:clamp(120px,18vw,260px)/1 var(--display);color:var(--red);mix-blend-mode:screen;letter-spacing:-.04em;
+  background:radial-gradient(circle at 50% 40%,rgba(255,31,45,.25),transparent 60%)}
+.mono span{transition:transform .2s}
+.portrait .cap{position:absolute;left:36px;bottom:20px;font:11px var(--mono);letter-spacing:.2em;color:var(--mute);z-index:4}
+.portrait .stamp{position:absolute;right:36px;top:20px;z-index:4;font:11px var(--mono);letter-spacing:.2em;background:var(--red);color:#000;padding:4px 8px;font-weight:700}
+.fill-text{font:600 clamp(22px,2.6vw,38px)/1.35 var(--body);letter-spacing:-.01em}
+.fill-text .w{color:rgba(255,255,255,.28);transition:color .3s}
+.fill-text .w.on{color:var(--fg)}
+.fill-text .w.r.on{color:var(--red)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);margin-top:50px;border-top:1px solid var(--line)}
+.facts div{padding:22px 0;border-right:1px solid var(--line);padding-left:18px}
+.facts div:first-child{padding-left:0}.facts div:last-child{border-right:0}
+.facts b{display:block;font:clamp(34px,4vw,56px)/1 var(--display);color:var(--fg)}
+.facts small{font:11px var(--mono);letter-spacing:.2em;color:var(--mute);text-transform:uppercase}
+@media (max-width:900px){.about{grid-template-columns:1fr}.portrait{max-width:420px}}
+
+/* ---------- two sides ---------- */
+.sides{display:flex;height:80vh;min-height:520px;padding:0;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.side{flex:1;position:relative;overflow:hidden;transition:flex 1s cubic-bezier(.77,0,.18,1);display:flex;flex-direction:column;justify-content:flex-end;padding:5vw}
+.side:hover{flex:1.8}
+.side .bgx{position:absolute;inset:0;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.side:hover .bgx{transform:scale(1.08)}
+.s1 .bgx{background:radial-gradient(circle at 30% 30%,#2a2a2a,#050505 70%)}
+.s1 .bgx:after{content:"";position:absolute;inset:18% 20%;border:2px solid rgba(255,255,255,.15);box-shadow:inset 0 0 0 30px rgba(255,255,255,.02)}
+.s2 .bgx{background:radial-gradient(circle at 70% 30%,var(--red2),#120002 70%)}
+.side .tt{position:relative;z-index:2}
+.side .tt small{font:12px var(--mono);letter-spacing:.3em;color:var(--red);display:block;margin-bottom:12px}
+.s2 .tt small{color:#000;background:var(--fg);display:inline-block;padding:3px 8px}
+.side h3{font:clamp(44px,6.5vw,100px)/.9 var(--display);text-transform:uppercase}
+.side p{max-width:440px;margin-top:16px;color:#d6d3cd;line-height:1.6;opacity:.0;transform:translateY(20px);transition:.6s .2s}
+.side:hover p,.side.touch p{opacity:1;transform:none}
+.side .big-ico{position:absolute;top:8%;right:8%;font:clamp(90px,14vw,200px)/1 var(--display);opacity:.08;z-index:1}
+@media (max-width:820px){.sides{flex-direction:column;height:auto}.side{min-height:60vh}.side p{opacity:1;transform:none}}
+
+
+/* ---------- featured video ---------- */
+.feat{display:grid;grid-template-columns:1.1fr 1fr;gap:6vw;align-items:center;overflow:hidden}
+.feat-text p{color:#cfccc6;line-height:1.7;max-width:440px;margin:26px 0 34px;font-size:17px}
+.watch{display:inline-flex;align-items:center;gap:12px;background:var(--red);color:#000;font:700 14px var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:18px 30px;border-radius:60px;transition:transform .3s,box-shadow .3s}
+.watch svg{width:20px;height:20px}
+.watch:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(255,31,45,.4)}
+.phone{justify-self:center;position:relative;width:min(78vw,320px);aspect-ratio:9/18.5;border-radius:44px;padding:12px;background:#1a1a1a;box-shadow:0 0 0 2px #2a2a2a,0 40px 120px rgba(255,31,45,.35);transform:rotate(-6deg);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.phone:hover{transform:rotate(0) scale(1.03)}
+.ig{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5;background:#fff}
+.phone:before{content:"";position:absolute;inset:-40px;background:radial-gradient(circle,rgba(255,31,45,.35),transparent 65%);z-index:-1;filter:blur(30px);animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.4;transform:scale(.9)}}
+.screen{position:relative;height:100%;border-radius:34px;overflow:hidden;background:radial-gradient(circle at 30% 25%,#ff1f2d,transparent 45%),radial-gradient(circle at 75% 75%,#7a00ff,transparent 45%),#0a0a0a}
+.screen:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.25) 0 2px,transparent 2px 4px)}
+.ph-top{position:absolute;top:18px;left:16px;right:16px;display:flex;align-items:center;gap:8px;z-index:2;font-size:13px}
+.ph-top .av{width:30px;height:30px;border-radius:50%;background:#000;border:2px solid var(--red);display:grid;place-items:center;font:14px var(--display)}
+.ph-top small{margin-left:auto;font:11px var(--mono);letter-spacing:.15em;opacity:.8}
+.ph-play{position:absolute;top:50%;left:50%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);z-index:2;display:grid;place-items:center;animation:pulse 2s ease-in-out infinite}
+.ph-play:after{content:"";border-left:22px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent;margin-left:6px}
+.ph-side{position:absolute;right:14px;bottom:70px;display:flex;flex-direction:column;gap:18px;z-index:2;font-size:22px}
+.ph-bar{position:absolute;left:16px;right:16px;bottom:26px;height:3px;background:rgba(255,255,255,.25);z-index:2;border-radius:3px;overflow:hidden}
+.ph-bar i{display:block;height:100%;width:40%;background:var(--red);animation:bar 6s linear infinite}
+@keyframes bar{from{width:0}to{width:100%}}
+@media (max-width:900px){.feat{grid-template-columns:1fr}.phone{transform:rotate(0)}}
+/* ---------- services ---------- */
+.svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:60px}
+.svc-head p{max-width:380px;color:var(--mute);line-height:1.6}
+.svc{border-top:1px solid var(--line)}
+.row-s{position:relative;display:grid;grid-template-columns:90px 1fr 1.1fr 60px;align-items:center;gap:20px;padding:34px 0;border-bottom:1px solid var(--line);overflow:hidden;isolation:isolate}
+.row-s:before{content:"";position:absolute;inset:0;background:var(--red);transform:scaleY(0);transform-origin:bottom;transition:transform .6s cubic-bezier(.77,0,.18,1);z-index:-1}
+.row-s:hover:before{transform:scaleY(1)}
+.row-s .n{font:14px var(--mono);color:var(--mute);transition:color .4s}
+.row-s h4{font:clamp(34px,4.6vw,70px)/1 var(--display);text-transform:uppercase;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.row-s p{color:var(--mute);line-height:1.6;transition:color .4s}
+.row-s .arr{width:56px;height:56px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.5s;font-size:22px}
+.row-s:hover .n,.row-s:hover p{color:#000}
+.row-s:hover h4{transform:translateX(20px);color:#000}
+.row-s:hover .arr{background:#000;border-color:#000;transform:rotate(-45deg)}
+@media (max-width:820px){.row-s{grid-template-columns:50px 1fr}.row-s p{grid-column:2}.row-s .arr{display:none}}
+
+/* ---------- portfolio ---------- */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:40px 0}
+.filters button{background:none;border:1px solid var(--line);color:var(--fg);font:600 12px var(--mono);letter-spacing:.2em;text-transform:uppercase;padding:12px 20px;border-radius:40px;transition:.3s}
+.filters button:hover{border-color:var(--fg)}
+.filters button.on{background:var(--red);border-color:var(--red);color:#000}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;perspective:1200px}
+.tile{position:relative;overflow:hidden;border-radius:6px;aspect-ratio:4/5;grid-column:span 4;transform-style:preserve-3d;transition:transform .2s ease-out,opacity .5s,filter .5s}
+.tile.wide{grid-column:span 8;aspect-ratio:auto}
+.tile.hide{opacity:.08;filter:grayscale(1) blur(2px);pointer-events:none}
+.tile .art{position:absolute;inset:0;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.tile:hover .art{transform:scale(1.1)}
+.tile .ov{position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(0,0,0,.85));display:flex;flex-direction:column;justify-content:flex-end;padding:24px;transform:translateZ(40px)}
+.tile .ov small{font:11px var(--mono);letter-spacing:.25em;color:var(--red);text-transform:uppercase}
+.tile .ov h5{font:clamp(26px,2.6vw,40px)/1 var(--display);text-transform:uppercase;margin-top:6px}
+.tile .play{position:absolute;top:22px;right:22px;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);display:grid;place-items:center;transform:translateZ(60px) scale(.8);opacity:0;transition:.4s}
+.tile:hover .play{opacity:1;transform:translateZ(60px) scale(1)}
+.tile .play:after{content:"";border-left:13px solid #fff;border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:4px}
+.tile .tc{position:absolute;top:22px;left:22px;font:11px var(--mono);letter-spacing:.15em;background:rgba(0,0,0,.55);padding:4px 8px;transform:translateZ(30px)}
+/* art themes */
+.a1{background:radial-gradient(circle at 30% 20%,#f6d3b0 0,transparent 30%),radial-gradient(circle at 70% 70%,#6b1d22,transparent 55%),linear-gradient(160deg,#2a1210,#090303)}
+.a2{background:radial-gradient(ellipse at 50% 110%,#ff6a2a,transparent 55%),linear-gradient(180deg,#0b1424,#2b1730 60%,#ff3d2a)}
+.a3{background:repeating-linear-gradient(90deg,rgba(255,31,45,.6) 0 3px,transparent 3px 60px),radial-gradient(circle at 50% 50%,#ff1f2d,transparent 40%),#070707}
+.a4{background:conic-gradient(from 200deg at 50% 60%,#ff1f2d,#ffb800,#00e1ff,#ff1f2d);filter:saturate(.8)}
+.a5{background:radial-gradient(circle at 50% 35%,#fff3e6 0,transparent 18%),radial-gradient(circle at 50% 35%,rgba(255,220,180,.3),transparent 45%),linear-gradient(180deg,#191919,#050505)}
+.a6{background:linear-gradient(135deg,#1b3b2a,#08130d 60%),radial-gradient(circle at 80% 20%,#c9ff4a,transparent 40%);background-blend-mode:screen}
+.a7{background:radial-gradient(circle at 20% 80%,#ff1f2d,transparent 40%),radial-gradient(circle at 80% 30%,#7a00ff,transparent 45%),#06010d}
+.a4:after,.a7:after,.a3:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.25) 0 2px,transparent 2px 4px)}
+@media (max-width:900px){.tile,.tile.wide{grid-column:span 6;aspect-ratio:4/5}}
+@media (max-width:560px){.tile,.tile.wide{grid-column:span 12;aspect-ratio:4/3}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:250;background:rgba(0,0,0,.92);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .5s}
+.lb.on{opacity:1;pointer-events:auto}
+.lb .frame{width:min(90vw,1000px);aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:6px;transform:scale(.85);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.lb.on .frame{transform:scale(1)}
+.lb .frame .art{position:absolute;inset:0}
+.lb .info{position:absolute;inset:auto 0 0 0;padding:30px;background:linear-gradient(transparent,rgba(0,0,0,.9))}
+.lb .info h5{font:clamp(30px,4vw,56px)/1 var(--display);text-transform:uppercase}
+.lb .info p{color:#ccc;margin-top:8px;font-size:14px}
+.lb .x{position:absolute;top:26px;right:5vw;font:12px var(--mono);letter-spacing:.3em;background:none;border:0;color:#fff}
+
+/* ---------- contact ---------- */
+.contact{text-align:center;overflow:hidden;padding-bottom:60px}
+.contact .h2{font-size:clamp(56px,12vw,200px)}
+.contact .h2 .r{color:var(--red)}
+.mag-wrap{margin:60px auto 40px;display:flex;justify-content:center}
+.mag{position:relative;width:clamp(180px,22vw,240px);aspect-ratio:1;border-radius:50%;background:var(--red);color:#000;display:grid;place-items:center;font:600 14px var(--mono);letter-spacing:.15em;text-transform:uppercase;transition:transform .25s ease-out;box-shadow:0 0 80px rgba(255,31,45,.35)}
+.mag span{transition:transform .25s ease-out;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:8px}
+.mag svg{width:34px;height:34px}
+.mag:before{content:"";position:absolute;inset:-14px;border:1px dashed rgba(255,31,45,.6);border-radius:50%;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.channels{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.chan{border:1px solid var(--line);border-radius:60px;padding:16px 28px;display:flex;gap:12px;align-items:center;font:600 14px var(--body);transition:.35s}
+.chan:hover{border-color:var(--red);background:rgba(255,31,45,.08)}
+.chan small{font:11px var(--mono);color:var(--mute);letter-spacing:.2em}
+footer{border-top:1px solid var(--line);padding:30px 5vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font:12px var(--mono);letter-spacing:.15em;color:var(--mute)}
+.huge-foot{font:clamp(70px,20vw,340px)/.8 var(--display);text-transform:lowercase;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.18);margin-top:80px;white-space:nowrap;user-select:none}
+.huge-foot span{color:var(--red);-webkit-text-stroke:0}
+
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}}
+</style>
+</head>
+<body class="loading">
+
+<div class="grain"></div><div class="scan"></div>
+<div class="cursor"></div><div class="cursor-ring"></div>
+<div class="progress"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="half top"></div><div class="half bot"></div>
+  <div class="leader">
+    <svg viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="92" fill="none" stroke="#fff" stroke-width="2" opacity=".6"/>
+      <circle cx="100" cy="100" r="74" fill="none" stroke="#fff" stroke-width="1" opacity=".3"/>
+      <line x1="0" y1="100" x2="200" y2="100" stroke="#fff" opacity=".3"/>
+      <line x1="100" y1="0" x2="100" y2="200" stroke="#fff" opacity=".3"/>
+      <path class="sweep" d="M100 100 L100 8 A92 92 0 0 1 192 100 Z" fill="#ff1f2d" opacity=".55"/>
+    </svg>
+    <div class="num" id="num">3</div>
+  </div>
+  <div class="skip">TIKLA · GEÇ</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="logo"><i></i>clipbyaslan</a>
+  <div class="links">
+    <a href="#hakkimda"><span data-t="Hakkımda">Hakkımda</span></a>
+    <a href="#video"><span data-t="Video">Video</span></a>
+    <a href="#hizmetler"><span data-t="Hizmetler">Hizmetler</span></a>
+    <a href="#portfolyo"><span data-t="Portfolyo">Portfolyo</span></a>
+    <a href="#iletisim"><span data-t="İletişim">İletişim</span></a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menü"></button>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="#hakkimda">Hakkımda</a><a href="#video">Video</a><a href="#hizmetler">Hizmetler</a><a href="#portfolyo">Portfolyo</a><a href="#iletisim">İletişim</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="vf">
+    <div class="c tl"></div><div class="c tr"></div><div class="c bl"></div><div class="c br"></div>
+    <div class="hud h1"><span class="rec"></span>REC</div>
+    <div class="hud h2" id="tc">00:00:00:00</div>
+    <div class="hud h3">4K · 25FPS · ISO 800</div>
+    <div class="hud h4">▮▮▮▯ 87%</div>
+    <div class="cross"></div>
+  </div>
+  <div class="hero-inner" id="heroInner">
+    <div class="kicker">Fotoğraf · Video · Klip · Reels</div>
+    <h1 class="big glitch">
+      <span class="row" data-split>Abdullah</span>
+      <span class="row outline" data-split>Aslan</span>
+    </h1>
+    <p class="tag">Kamera arkasında <b>sahneyi kuran</b>, kamera önünde <b>sahneyi çalan</b> adam.</p>
+  </div>
+  <a href="#hakkimda" class="scroll" data-hover="KAYDIR">KAYDIR<i></i></a>
+</header>
+
+<div class="marquee"><div class="track" id="mq1"></div></div>
+
+<!-- ABOUT -->
+<section id="hakkimda">
+  <div class="about">
+    <div class="portrait reveal" id="portrait">
+      <div class="film-holes l"></div><div class="film-holes r"></div>
+      <div class="mono"><span>AA</span></div>
+      <div class="stamp">● CLIPBYASLAN</div>
+      <div class="cap">SAHNE 01 · ÇEKİM 01</div>
+    </div>
+    <div>
+      <div class="label">Hakkımda</div>
+      <p class="fill-text" id="fill">Ben Abdullah Aslan. Fotoğraf ve video benim işim. Düğün salonlarında unutulmaz anları, dış çekimlerde sinematik kareleri, müzik kliplerinde hikâyeyi yakalıyorum. Markaların sosyal medyasını yönetiyorum. clipbyaslan'da ise kameranın önüne geçip insanları güldürüyorum. Kısacası: her kareyi bir film sahnesi gibi çekiyorum.</p>
+      <div class="facts reveal">
+        <div><b>4</b><small>Uzmanlık alanı</small></div>
+                <div><b>∞</b><small>Fikir</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED VIDEO -->
+<section class="feat" id="video">
+  <div class="feat-text">
+    <div class="label">Öne Çıkan Video</div>
+    <h2 class="h2 wipe">Şimdi <em>izle</em></h2>
+    <p class="reveal">clipbyaslan Instagram hesabından seçilmiş bir paylaşım. Tıkla, Instagram'da izle; beğenmeyi ve takip etmeyi unutma.</p>
+    <a class="watch reveal" href="https://www.instagram.com/p/DffK8TlswgT/" target="_blank" rel="noopener" data-hover="İZLE">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+      Instagram'da İzle →
+    </a>
+  </div>
+  <div class="phone reveal">
+    <div class="screen">
+      <iframe class="ig" src="https://www.instagram.com/p/DffK8TlswgT/embed" loading="lazy" allowtransparency="true" allowfullscreen scrolling="no" title="clipbyaslan Instagram videosu"></iframe>
+      <div class="ph-top"><span class="av">A</span><b>clipbyaslan</b><small>Reels</small></div>
+      <div class="ph-play"></div>
+      <div class="ph-bar"><i></i></div>
+      <div class="ph-side"><span>♥</span><span>💬</span><span>➤</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="hizmetler">
+  <div class="svc-head">
+    <div><div class="label">Hizmetler</div><h2 class="h2 wipe">Ne <em>çekiyorum?</em></h2></div>
+    <p class="reveal">Tek bir kare de, uzun bir hikâye de aynı özeni hak eder. İhtiyacınıza göre çekim, kurgu ve içerik planı.</p>
+  </div>
+  <div class="svc">
+    <a href="#iletisim" class="row-s reveal" data-hover="YAZ"><span class="n">/01</span><h4>Düğün Çekimi</h4><p>Salon ve tören çekimleri; hikâye anlatan düğün filmi, klip ve fotoğraf.</p><span class="arr">→</span></a>
+    <a href="#iletisim" class="row-s reveal" data-hover="YAZ"><span class="n">/02</span><h4>Dış Çekim</h4><p>Gün batımı, şehir, doğa. Çiftler ve aileler için sinematik dış çekim.</p><span class="arr">→</span></a>
+    <a href="#iletisim" class="row-s reveal" data-hover="YAZ"><span class="n">/03</span><h4>Müzik Klibi</h4><p>Konseptten kurguya klip prodüksiyonu; sahne, ışık, renk düzenleme.</p><span class="arr">→</span></a>
+    <a href="#iletisim" class="row-s reveal" data-hover="YAZ"><span class="n">/04</span><h4>Sosyal Medya</h4><p>Markalar için hesap yönetimi, Reels üretimi ve içerik planı.</p><span class="arr">→</span></a>
+  </div>
+</section>
+
+<div class="marquee alt"><div class="track" id="mq2"></div></div>
+
+<!-- PORTFOLIO -->
+<section id="portfolyo">
+  <div class="label">Portfolyo</div>
+  <h2 class="h2 wipe">Seçilmiş <em>kareler</em></h2>
+  <div class="filters" id="filters">
+    <button class="on" data-f="all">Tümü</button>
+    <button data-f="dugun">Düğün</button>
+    <button data-f="dis">Dış Çekim</button>
+    <button data-f="klip">Klip</button>
+    <button data-f="komedi">Komedi</button>
+  </div>
+  <div class="grid" id="grid">
+    <div class="tile wide reveal" data-c="dugun" data-t="İlk Dans" data-d="Düğün filmi · Salon çekimi"><div class="art a1"></div><span class="tc">00:03:12</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>İlk Dans</h5></div></div>
+    <div class="tile reveal" data-c="dis" data-t="Gün Batımı" data-d="Dış çekim · Çift"><div class="art a2"></div><span class="tc">00:01:04</span><span class="play"></span><div class="ov"><small>Dış Çekim</small><h5>Gün Batımı</h5></div></div>
+    <div class="tile reveal" data-c="klip" data-t="Kırmızı Işık" data-d="Müzik klibi · Konsept"><div class="art a3"></div><span class="tc">00:03:47</span><span class="play"></span><div class="ov"><small>Klip</small><h5>Kırmızı Işık</h5></div></div>
+    <div class="tile reveal" data-c="komedi" data-t="Bu Ne Ya" data-d="clipbyaslan · Instagram Reels"><div class="art a4"></div><span class="tc">00:00:42</span><span class="play"></span><div class="ov"><small>Komedi</small><h5>Bu Ne Ya</h5></div></div>
+    <div class="tile reveal" data-c="dugun" data-t="Gelin Hazırlığı" data-d="Düğün · Fotoğraf"><div class="art a5"></div><span class="tc">FOTO</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Gelin Hazırlığı</h5></div></div>
+    <div class="tile reveal" data-c="dis" data-t="Orman Yolu" data-d="Dış çekim · Doğa"><div class="art a6"></div><span class="tc">00:00:58</span><span class="play"></span><div class="ov"><small>Dış Çekim</small><h5>Orman Yolu</h5></div></div>
+    <div class="tile wide reveal" data-c="klip komedi" data-t="Gece Çekimi" data-d="Klip & Reels · Neon"><div class="art a7"></div><span class="tc">00:02:20</span><span class="play"></span><div class="ov"><small>Klip · Komedi</small><h5>Gece Çekimi</h5></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="iletisim">
+  <div class="label" style="justify-content:center">İletişim</div>
+  <h2 class="h2 reveal">Bir sonraki<br>sahne <span class="r">senin.</span></h2>
+  <div class="mag-wrap">
+    <a class="mag" id="mag" href="https://instagram.com/clipbyaslan" target="_blank" rel="noopener" data-hover="DM">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#000"/></svg>
+        Instagram'dan yaz
+      </span>
+    </a>
+  </div>
+  <div class="channels">
+    <a class="chan" href="https://instagram.com/clipbyaslan" target="_blank" rel="noopener"><small>IG</small>@clipbyaslan</a>
+    <a class="chan" href="tel:+905343174030"><small>TEL</small>0534 317 40 30</a>
+    <a class="chan" href="https://wa.me/905343174030" target="_blank" rel="noopener"><small>WA</small>WhatsApp: 0534 317 40 30</a>
+  </div>
+  <div class="huge-foot">clipby<span>aslan</span></div>
+</section>
+
+<footer>
+  <span>© 2026 CLIPBYASLAN — ABDULLAH ASLAN</span>
+  <span>FOTOĞRAF · VİDEO · KLİP</span>
+  <a href="#top">YUKARI ↑</a>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="x" id="lbx">KAPAT ✕</button>
+  <div class="frame"><div class="art" id="lbArt"></div><div class="info"><h5 id="lbT"></h5><p id="lbD"></p></div></div>
+</div>
+
+<script>
+(function(){
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* split hero letters */
+$$('[data-split]').forEach((row,ri)=>{
+  const t=row.textContent; row.textContent='';
+  [...t].forEach((c,i)=>{const s=document.createElement('span');s.className='ch';s.textContent=c;s.style.animationDelay=(0.35+ri*.25+i*.05)+'s';row.appendChild(s)});
+});
+
+/* loader */
+const loader=$('#loader'), num=$('#num'); let n=3, done=false;
+function finish(){ if(done)return; done=true; loader.classList.add('out'); document.body.classList.remove('loading');
+  setTimeout(()=>$('.hero').classList.add('started'),350); setTimeout(()=>loader.remove(),1200); }
+const iv=setInterval(()=>{n--; if(n>0){num.textContent=n} else {clearInterval(iv); num.textContent='●'; num.style.color='#ff1f2d'; setTimeout(finish,350)}}, reduce?100:600);
+loader.addEventListener('click',finish);
+
+/* marquees */
+const words1=['Düğün','Dış Çekim','Müzik Klibi','Reels','Komedi','Sosyal Medya'];
+const words2=['clipbyaslan','Abdullah Aslan','Kayıt','Aksiyon!','Kes!'];
+function fill(el,w){const h=w.map(x=>`<span>${x}</span>`).join('');el.innerHTML=h+h+h+h}
+fill($('#mq1'),words1); fill($('#mq2'),words2);
+
+/* timecode */
+const tc=$('#tc'); const t0=performance.now();
+(function tick(){const f=Math.floor((performance.now()-t0)/40), p=x=>String(x).padStart(2,'0');
+  tc.textContent=`${p(Math.floor(f/90000))}:${p(Math.floor(f/1500)%60)}:${p(Math.floor(f/25)%60)}:${p(f%25)}`; requestAnimationFrame(tick)})();
+
+/* cursor */
+const cur=$('.cursor'), ring=$('.cursor-ring'); let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`});
+(function loop(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(loop)})();
+$$('[data-hover], .tile').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.classList.add('big');ring.textContent=el.dataset.hover||'İZLE'});
+  el.addEventListener('mouseleave',()=>{ring.classList.remove('big');ring.textContent=''});
+});
+
+/* progress + hero parallax */
+const prog=$('.progress'), hi=$('#heroInner');
+addEventListener('scroll',()=>{
+  const h=document.documentElement; prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+  const y=scrollY; if(y<innerHeight){hi.style.transform=`translateY(${y*.35}px) scale(${1-y/innerHeight*.15})`;hi.style.opacity=1-y/innerHeight*1.1}
+  fillWords();
+},{passive:true});
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+$$('.reveal').forEach((el,i)=>{el.style.transitionDelay=(el.classList.contains('row-s')||el.classList.contains('tile'))?((i%4)*.08)+'s':'0s';io.observe(el)});
+const io2=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll(':scope > .wipe').forEach(w=>w.classList.add('in'));io2.unobserve(e.target)}}),{threshold:.1});
+$$('.wipe').forEach(el=>io2.observe(el.parentElement));
+
+/* word fill */
+const fillEl=$('#fill'); const red=['Abdullah','Aslan.','güldürüyorum.','film','sahnesi']; 
+fillEl.innerHTML=fillEl.textContent.split(' ').map(w=>`<span class="w${red.includes(w)?' r':''}">${w}</span>`).join(' ');
+const ws=$$('#fill .w');
+function fillWords(){const r=fillEl.getBoundingClientRect(); const p=Math.min(1,Math.max(0,(innerHeight*.9-r.top)/(innerHeight*.55)));
+  const k=Math.round(p*ws.length); ws.forEach((w,i)=>w.classList.toggle('on',i<k))}
+fillWords();
+
+/* portrait monogram follows mouse */
+const pm=$('#portrait .mono span');
+$('#portrait').addEventListener('mousemove',e=>{const r=e.currentTarget.getBoundingClientRect();
+  pm.style.transform=`translate(${(e.clientX-r.left-r.width/2)/12}px,${(e.clientY-r.top-r.height/2)/12}px)`});
+$('#portrait').addEventListener('mouseleave',()=>pm.style.transform='');
+
+
+/* filters */
+$$('#filters button').forEach(b=>b.addEventListener('click',()=>{
+  $$('#filters button').forEach(x=>x.classList.remove('on')); b.classList.add('on'); const f=b.dataset.f;
+  $$('.tile').forEach(t=>t.classList.toggle('hide',f!=='all'&&!t.dataset.c.split(' ').includes(f)));
+}));
+
+/* tilt + lightbox */
+$$('.tile').forEach(t=>{
+  t.addEventListener('mousemove',e=>{const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    t.style.transform=`rotateY(${x*10}deg) rotateX(${-y*10}deg)`});
+  t.addEventListener('mouseleave',()=>t.style.transform='');
+  t.addEventListener('click',()=>{ $('#lbArt').className='art '+t.querySelector('.art').classList[1];
+    $('#lbT').textContent=t.dataset.t; $('#lbD').textContent=t.dataset.d; $('#lb').classList.add('on')});
+});
+const closeLb=()=>$('#lb').classList.remove('on');
+$('#lbx').addEventListener('click',closeLb); $('#lb').addEventListener('click',e=>{if(e.target.id==='lb')closeLb()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
+
+/* magnetic button */
+const mag=$('#mag'), ms=mag.querySelector('span');
+mag.parentElement.addEventListener('mousemove',e=>{const r=mag.getBoundingClientRect(),x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;
+  mag.style.transform=`translate(${x*.35}px,${y*.35}px)`; ms.style.transform=`translate(${x*.15}px,${y*.15}px)`});
+mag.parentElement.addEventListener('mouseleave',()=>{mag.style.transform='';ms.style.transform=''});
+
+/* mobile menu */
+const bg=$('#burger'), mm=$('#mm');
+bg.addEventListener('click',()=>{bg.classList.toggle('on');mm.classList.toggle('on')});
+$$('#mm a').forEach(a=>a.addEventListener('click',()=>{bg.classList.remove('on');mm.classList.remove('on')}));
+
+/* film holes */
+$$('.film-holes').forEach(f=>{for(let i=0;i<12;i++)f.appendChild(document.createElement('i'))});
+})();
+</script>
+</body>
+</html>
