@@ -273,6 +273,23 @@ section{position:relative;padding:clamp(90px,14vh,160px) 5vw}
 .lb .frame.ig{width:min(92vw,420px);aspect-ratio:auto;height:min(86vh,760px);background:#fff}
 .lb .frame.ig iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .lb .frame.ig .info,.lb .frame.ig .art{display:none}
+
+/* ---------- brands ---------- */
+.brands{border-top:1px solid var(--line)}
+.brand{position:relative;display:grid;grid-template-columns:70px 1.4fr 1fr auto;align-items:center;gap:20px;padding:28px 0;border-bottom:1px solid var(--line);overflow:hidden;isolation:isolate}
+.brand:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,31,45,.18),transparent 70%);transform:translateX(-101%);transition:transform .7s cubic-bezier(.77,0,.18,1);z-index:-1}
+.brand:hover:before{transform:none}
+.brand .bn{font:13px var(--mono);color:var(--mute)}
+.brand .bt{font:clamp(30px,4.2vw,64px)/1 var(--display);text-transform:uppercase;transition:transform .6s cubic-bezier(.2,.8,.2,1),color .3s}
+.brand .bs{font:12px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+.brand .bh{font:600 14px var(--body);color:var(--red);opacity:0;transform:translateX(-20px);transition:.5s}
+.brand:hover .bt{transform:translateX(18px);color:var(--red)}
+.brand:hover .bh{opacity:1;transform:none}
+@media (max-width:820px){.brand{grid-template-columns:40px 1fr}.brand .bs,.brand .bh{grid-column:2}.brand .bh{opacity:1;transform:none}}
+/* portfolio crop fix: hide Instagram footer, per-post zoom */
+.ig-tile .ov{background:linear-gradient(transparent 30%,rgba(5,5,5,.85) 55%,#050505 70%)}
+.ig-tile .igc{transform-origin:50% 0;transform:scale(var(--s,1))}
+.ig-tile:hover .igc{transform:scale(calc(var(--s,1)*1.05))}
 /* ---------- services ---------- */
 .svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:60px}
 .svc-head p{max-width:380px;color:var(--mute);line-height:1.6}
@@ -503,12 +520,27 @@ footer{border-top:1px solid var(--line);padding:30px 5vw;display:flex;justify-co
     <div class="tile ig-tile wide reveal" data-c="dugun" data-t="Düğün Hikâyesi" data-d="Düğün · Reels · @dugunmedia" data-u="DdV8rVQOaOm"><div class="art a1"></div><iframe class="igc" src="https://www.instagram.com/p/DdV8rVQOaOm/embed" loading="lazy" scrolling="no" tabindex="-1" title="Düğün Hikâyesi"></iframe><span class="tc">00:01:00</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Düğün Hikâyesi</h5></div></div>
     <div class="tile ig-tile reveal" data-c="dis" data-t="İstanbul Sokakları" data-d="Dış Çekim · Reels · @dugunmedia" data-u="DcV-K4oOb0o"><div class="art a2"></div><iframe class="igc" src="https://www.instagram.com/p/DcV-K4oOb0o/embed" loading="lazy" scrolling="no" tabindex="-1" title="İstanbul Sokakları"></iframe><span class="tc">00:00:45</span><span class="play"></span><div class="ov"><small>Dış Çekim</small><h5>İstanbul Sokakları</h5></div></div>
     <div class="tile ig-tile reveal" data-c="dis" data-t="Sibel & Tunahan" data-d="Dış Çekim · İstanbul · @dugunmedia" data-u="DcMDzWbO1bX"><div class="art a6"></div><iframe class="igc" src="https://www.instagram.com/p/DcMDzWbO1bX/embed" loading="lazy" scrolling="no" tabindex="-1" title="Sibel & Tunahan"></iframe><span class="tc">00:00:50</span><span class="play"></span><div class="ov"><small>Dış Çekim</small><h5>Sibel & Tunahan</h5></div></div>
-    <div class="tile ig-tile reveal" data-c="dugun" data-t="Hayat & Atahan" data-d="Düğün Filmi · @dugunmedia" data-u="DbVWrpYtO9S"><div class="art a5"></div><iframe class="igc" src="https://www.instagram.com/p/DbVWrpYtO9S/embed" loading="lazy" scrolling="no" tabindex="-1" title="Hayat & Atahan"></iframe><span class="tc">00:01:20</span><span class="play"></span><div class="ov"><small>Düğün Filmi</small><h5>Hayat & Atahan</h5></div></div>
-    <div class="tile ig-tile reveal" data-c="dugun" data-t="Göl Kıyısında" data-d="Düğün · Anatolia Garden · @anatoliagardenn" data-u="DbnGFG5uZt1"><div class="art a3"></div><iframe class="igc" src="https://www.instagram.com/p/DbnGFG5uZt1/embed" loading="lazy" scrolling="no" tabindex="-1" title="Göl Kıyısında"></iframe><span class="tc">00:00:40</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Göl Kıyısında</h5></div></div>
+    <div class="tile ig-tile reveal" data-c="dugun" data-t="Hayat & Atahan" data-d="Düğün Filmi · @dugunmedia" data-u="DbVWrpYtO9S" style="--s:2.2"><div class="art a5"></div><iframe class="igc" src="https://www.instagram.com/p/DbVWrpYtO9S/embed" loading="lazy" scrolling="no" tabindex="-1" title="Hayat & Atahan"></iframe><span class="tc">00:01:20</span><span class="play"></span><div class="ov"><small>Düğün Filmi</small><h5>Hayat & Atahan</h5></div></div>
+    <div class="tile ig-tile reveal" data-c="dugun" data-t="Göl Kıyısında" data-d="Düğün · Anatolia Garden · @anatoliagardenn" data-u="DbnGFG5uZt1" style="--s:1.43"><div class="art a3"></div><iframe class="igc" src="https://www.instagram.com/p/DbnGFG5uZt1/embed" loading="lazy" scrolling="no" tabindex="-1" title="Göl Kıyısında"></iframe><span class="tc">00:00:40</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Göl Kıyısında</h5></div></div>
     <div class="tile ig-tile reveal" data-c="dugun" data-t="Gelin Hazırlığı" data-d="Düğün · Hazırlık · @dugunmedia" data-u="DbcvIY3Dc0Z"><div class="art a7"></div><iframe class="igc" src="https://www.instagram.com/p/DbcvIY3Dc0Z/embed" loading="lazy" scrolling="no" tabindex="-1" title="Gelin Hazırlığı"></iframe><span class="tc">00:00:30</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Gelin Hazırlığı</h5></div></div>
     <div class="tile ig-tile wide reveal" data-c="dugun" data-t="Bakışlar" data-d="Düğün · Anatolia Garden · @anatoliagardenn" data-u="DfWxniXuRTt"><div class="art a1"></div><iframe class="igc" src="https://www.instagram.com/p/DfWxniXuRTt/embed" loading="lazy" scrolling="no" tabindex="-1" title="Bakışlar"></iframe><span class="tc">00:00:35</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Bakışlar</h5></div></div>
     <div class="tile ig-tile reveal" data-c="dis" data-t="İlk Bakış" data-d="Fotoğraf · @dugunmedia" data-u="DbdukAMDbwg"><div class="art a2"></div><iframe class="igc" src="https://www.instagram.com/p/DbdukAMDbwg/embed" loading="lazy" scrolling="no" tabindex="-1" title="İlk Bakış"></iframe><span class="tc">FOTO</span><span class="play"></span><div class="ov"><small>Fotoğraf</small><h5>İlk Bakış</h5></div></div>
     <div class="tile ig-tile reveal" data-c="komedi" data-t="clipbyaslan" data-d="Komedi · Reels · @clipbyaslan" data-u="DffK8TlswgT"><div class="art a4"></div><iframe class="igc" src="https://www.instagram.com/p/DffK8TlswgT/embed" loading="lazy" scrolling="no" tabindex="-1" title="clipbyaslan"></iframe><span class="tc">00:00:42</span><span class="play"></span><div class="ov"><small>Komedi</small><h5>clipbyaslan</h5></div></div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section id="markalar">
+  <div class="svc-head">
+    <div><div class="label">Referanslar</div><h2 class="h2 wipe">Yönettiğimiz <em>hesaplar</em></h2></div>
+    <p class="reveal">Sosyal medyasını yönettiğimiz markalardan bazıları. İçerik planı, çekim, kurgu ve paylaşım: hepsi tek elden.</p>
+  </div>
+  <div class="brands">
+      <a class="brand reveal" href="https://www.instagram.com/nesgayrimenkulotomotiv/" target="_blank" rel="noopener" data-hover="BAK"><span class="bn">01</span><span class="bt">Nes Gayrimenkul</span><span class="bs">Otomotiv & Gayrimenkul</span><span class="bh">@nesgayrimenkulotomotiv ↗</span></a>
+      <a class="brand reveal" href="https://www.instagram.com/kayalarparkins/" target="_blank" rel="noopener" data-hover="BAK"><span class="bn">02</span><span class="bt">Kaya Park İnşaat</span><span class="bs">İnşaat</span><span class="bh">@kayalarparkins ↗</span></a>
+      <a class="brand reveal" href="https://www.instagram.com/durmazinsaat34/" target="_blank" rel="noopener" data-hover="BAK"><span class="bn">03</span><span class="bt">Durmaz İnşaat</span><span class="bs">İnşaat & GYO</span><span class="bh">@durmazinsaat34 ↗</span></a>
+      <a class="brand reveal" href="https://www.instagram.com/seyranyapi/" target="_blank" rel="noopener" data-hover="BAK"><span class="bn">04</span><span class="bt">Seyran Yapı</span><span class="bs">Yapı & Konut</span><span class="bh">@seyranyapi ↗</span></a>
+      <a class="brand reveal" href="https://www.instagram.com/anatoliagardenn/" target="_blank" rel="noopener" data-hover="BAK"><span class="bn">05</span><span class="bt">Anatolia Garden</span><span class="bs">Düğün & Davet Mekânı</span><span class="bh">@anatoliagardenn ↗</span></a>
   </div>
 </section>
 
