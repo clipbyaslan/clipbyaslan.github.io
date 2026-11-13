@@ -262,6 +262,17 @@ section{position:relative;padding:clamp(90px,14vh,160px) 5vw}
 .qa .ans div{overflow:hidden}
 .qa .ans p{color:#bdb9b3;line-height:1.7;padding:0 60px 30px 0}
 @media (max-width:900px){.faq-wrap{grid-template-columns:1fr}.faq-wrap .sticky{position:static}}
+
+/* ---------- instagram tiles ---------- */
+.pf-note{color:var(--mute);margin-top:22px;max-width:560px;line-height:1.6}
+.pf-note a{color:var(--fg);border-bottom:1px solid var(--red)}
+.tile.wide{aspect-ratio:auto}
+.ig-tile .igc{position:absolute;left:0;top:-54px;width:100%;height:calc(100% + 320px);border:0;pointer-events:none;z-index:1;background:transparent;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.ig-tile:hover .igc{transform:scale(1.06)}
+.ig-tile .ov{z-index:3}.ig-tile .play,.ig-tile .tc{z-index:4}
+.lb .frame.ig{width:min(92vw,420px);aspect-ratio:auto;height:min(86vh,760px);background:#fff}
+.lb .frame.ig iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lb .frame.ig .info,.lb .frame.ig .art{display:none}
 /* ---------- services ---------- */
 .svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:60px}
 .svc-head p{max-width:380px;color:var(--mute);line-height:1.6}
@@ -481,21 +492,23 @@ footer{border-top:1px solid var(--line);padding:30px 5vw;display:flex;justify-co
 <section id="portfolyo">
   <div class="label">Portfolyo</div>
   <h2 class="h2 wipe">Seçilmiş <em>kareler</em></h2>
+  <p class="pf-note reveal">Çektiğim işlerden seçmeler. Daha fazlası için <a href="https://www.instagram.com/dugunmedia/" target="_blank" rel="noopener">@dugunmedia</a> ve <a href="https://www.instagram.com/anatoliagardenn/" target="_blank" rel="noopener">@anatoliagardenn</a> hesaplarına göz atın.</p>
   <div class="filters" id="filters">
     <button class="on" data-f="all">Tümü</button>
     <button data-f="dugun">Düğün</button>
     <button data-f="dis">Dış Çekim</button>
-    <button data-f="klip">Klip</button>
     <button data-f="komedi">Komedi</button>
   </div>
   <div class="grid" id="grid">
-    <div class="tile wide reveal" data-c="dugun" data-t="İlk Dans" data-d="Düğün filmi · Salon çekimi"><div class="art a1"></div><span class="tc">00:03:12</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>İlk Dans</h5></div></div>
-    <div class="tile reveal" data-c="dis" data-t="Gün Batımı" data-d="Dış çekim · Çift"><div class="art a2"></div><span class="tc">00:01:04</span><span class="play"></span><div class="ov"><small>Dış Çekim</small><h5>Gün Batımı</h5></div></div>
-    <div class="tile reveal" data-c="klip" data-t="Kırmızı Işık" data-d="Müzik klibi · Konsept"><div class="art a3"></div><span class="tc">00:03:47</span><span class="play"></span><div class="ov"><small>Klip</small><h5>Kırmızı Işık</h5></div></div>
-    <div class="tile reveal" data-c="komedi" data-t="Bu Ne Ya" data-d="clipbyaslan · Instagram Reels"><div class="art a4"></div><span class="tc">00:00:42</span><span class="play"></span><div class="ov"><small>Komedi</small><h5>Bu Ne Ya</h5></div></div>
-    <div class="tile reveal" data-c="dugun" data-t="Gelin Hazırlığı" data-d="Düğün · Fotoğraf"><div class="art a5"></div><span class="tc">FOTO</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Gelin Hazırlığı</h5></div></div>
-    <div class="tile reveal" data-c="dis" data-t="Orman Yolu" data-d="Dış çekim · Doğa"><div class="art a6"></div><span class="tc">00:00:58</span><span class="play"></span><div class="ov"><small>Dış Çekim</small><h5>Orman Yolu</h5></div></div>
-    <div class="tile wide reveal" data-c="klip komedi" data-t="Gece Çekimi" data-d="Klip & Reels · Neon"><div class="art a7"></div><span class="tc">00:02:20</span><span class="play"></span><div class="ov"><small>Klip · Komedi</small><h5>Gece Çekimi</h5></div></div>
+    <div class="tile ig-tile wide reveal" data-c="dugun" data-t="Düğün Hikâyesi" data-d="Düğün · Reels · @dugunmedia" data-u="DdV8rVQOaOm"><div class="art a1"></div><iframe class="igc" src="https://www.instagram.com/p/DdV8rVQOaOm/embed" loading="lazy" scrolling="no" tabindex="-1" title="Düğün Hikâyesi"></iframe><span class="tc">00:01:00</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Düğün Hikâyesi</h5></div></div>
+    <div class="tile ig-tile reveal" data-c="dis" data-t="İstanbul Sokakları" data-d="Dış Çekim · Reels · @dugunmedia" data-u="DcV-K4oOb0o"><div class="art a2"></div><iframe class="igc" src="https://www.instagram.com/p/DcV-K4oOb0o/embed" loading="lazy" scrolling="no" tabindex="-1" title="İstanbul Sokakları"></iframe><span class="tc">00:00:45</span><span class="play"></span><div class="ov"><small>Dış Çekim</small><h5>İstanbul Sokakları</h5></div></div>
+    <div class="tile ig-tile reveal" data-c="dis" data-t="Sibel & Tunahan" data-d="Dış Çekim · İstanbul · @dugunmedia" data-u="DcMDzWbO1bX"><div class="art a6"></div><iframe class="igc" src="https://www.instagram.com/p/DcMDzWbO1bX/embed" loading="lazy" scrolling="no" tabindex="-1" title="Sibel & Tunahan"></iframe><span class="tc">00:00:50</span><span class="play"></span><div class="ov"><small>Dış Çekim</small><h5>Sibel & Tunahan</h5></div></div>
+    <div class="tile ig-tile reveal" data-c="dugun" data-t="Hayat & Atahan" data-d="Düğün Filmi · @dugunmedia" data-u="DbVWrpYtO9S"><div class="art a5"></div><iframe class="igc" src="https://www.instagram.com/p/DbVWrpYtO9S/embed" loading="lazy" scrolling="no" tabindex="-1" title="Hayat & Atahan"></iframe><span class="tc">00:01:20</span><span class="play"></span><div class="ov"><small>Düğün Filmi</small><h5>Hayat & Atahan</h5></div></div>
+    <div class="tile ig-tile reveal" data-c="dugun" data-t="Göl Kıyısında" data-d="Düğün · Anatolia Garden · @anatoliagardenn" data-u="DbnGFG5uZt1"><div class="art a3"></div><iframe class="igc" src="https://www.instagram.com/p/DbnGFG5uZt1/embed" loading="lazy" scrolling="no" tabindex="-1" title="Göl Kıyısında"></iframe><span class="tc">00:00:40</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Göl Kıyısında</h5></div></div>
+    <div class="tile ig-tile reveal" data-c="dugun" data-t="Gelin Hazırlığı" data-d="Düğün · Hazırlık · @dugunmedia" data-u="DbcvIY3Dc0Z"><div class="art a7"></div><iframe class="igc" src="https://www.instagram.com/p/DbcvIY3Dc0Z/embed" loading="lazy" scrolling="no" tabindex="-1" title="Gelin Hazırlığı"></iframe><span class="tc">00:00:30</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Gelin Hazırlığı</h5></div></div>
+    <div class="tile ig-tile wide reveal" data-c="dugun" data-t="Bakışlar" data-d="Düğün · Anatolia Garden · @anatoliagardenn" data-u="DfWxniXuRTt"><div class="art a1"></div><iframe class="igc" src="https://www.instagram.com/p/DfWxniXuRTt/embed" loading="lazy" scrolling="no" tabindex="-1" title="Bakışlar"></iframe><span class="tc">00:00:35</span><span class="play"></span><div class="ov"><small>Düğün</small><h5>Bakışlar</h5></div></div>
+    <div class="tile ig-tile reveal" data-c="dis" data-t="İlk Bakış" data-d="Fotoğraf · @dugunmedia" data-u="DbdukAMDbwg"><div class="art a2"></div><iframe class="igc" src="https://www.instagram.com/p/DbdukAMDbwg/embed" loading="lazy" scrolling="no" tabindex="-1" title="İlk Bakış"></iframe><span class="tc">FOTO</span><span class="play"></span><div class="ov"><small>Fotoğraf</small><h5>İlk Bakış</h5></div></div>
+    <div class="tile ig-tile reveal" data-c="komedi" data-t="clipbyaslan" data-d="Komedi · Reels · @clipbyaslan" data-u="DffK8TlswgT"><div class="art a4"></div><iframe class="igc" src="https://www.instagram.com/p/DffK8TlswgT/embed" loading="lazy" scrolling="no" tabindex="-1" title="clipbyaslan"></iframe><span class="tc">00:00:42</span><span class="play"></span><div class="ov"><small>Komedi</small><h5>clipbyaslan</h5></div></div>
   </div>
 </section>
 
@@ -627,10 +640,12 @@ $$('.tile').forEach(t=>{
   t.addEventListener('mousemove',e=>{const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
     t.style.transform=`rotateY(${x*10}deg) rotateX(${-y*10}deg)`});
   t.addEventListener('mouseleave',()=>t.style.transform='');
-  t.addEventListener('click',()=>{ $('#lbArt').className='art '+t.querySelector('.art').classList[1];
+  t.addEventListener('click',()=>{ const fr=$('#lb .frame'); fr.querySelectorAll('iframe').forEach(x=>x.remove()); fr.classList.remove('ig');
+    if(t.dataset.u){fr.classList.add('ig');const f=document.createElement('iframe');f.src='https://www.instagram.com/p/'+t.dataset.u+'/embed/captioned';f.setAttribute('allowfullscreen','');f.title=t.dataset.t;fr.appendChild(f)}
+    $('#lbArt').className='art '+t.querySelector('.art').classList[1];
     $('#lbT').textContent=t.dataset.t; $('#lbD').textContent=t.dataset.d; $('#lb').classList.add('on')});
 });
-const closeLb=()=>$('#lb').classList.remove('on');
+const closeLb=()=>{$('#lb').classList.remove('on');setTimeout(()=>$('#lb .frame').querySelectorAll('iframe').forEach(x=>x.remove()),500)};
 $('#lbx').addEventListener('click',closeLb); $('#lb').addEventListener('click',e=>{if(e.target.id==='lb')closeLb()});
 addEventListener('keydown',e=>{if(e.key==='Escape')closeLb()});
 
