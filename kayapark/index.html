@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Kaya Park İnşaat – Küçükçekmece Kentsel Dönüşüm | Güvenli Yapılar, Mutlu Yarınlar</title>
+<meta name="description" content="Kaya Park İnşaat: 30+ yıllık deneyimle Küçükçekmece'de kentsel dönüşüm, Yarısı Bizden, kat karşılığı, anahtar teslim inşaat, restorasyon, proje & mimarlık.">
+<link rel="icon" href="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=96,fit=crop/MpWnqdGHvgnUKbie/k-logo-R2wrtbSkv40tDn0O.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#C1272D;--red2:#e0343b;--ink:#1D1E20;--black:#0b0b0c;--grey:#B3B3B3;--light:#F1F1F1;--ease:cubic-bezier(.22,.8,.24,1);--ease2:cubic-bezier(.76,0,.24,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+section,footer{overflow-x:clip}
+body{font-family:"DM Sans",sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;line-height:1.65}
+body.lock{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4,.osw{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.08}
+.wrap{width:min(1240px,92%);margin:0 auto}
+section{position:relative}
+::selection{background:var(--red);color:#fff}
+
+/* ===== ÖZEL İMLEÇ ===== */
+.cur,.cur-dot{position:fixed;top:0;left:0;pointer-events:none;z-index:99999;border-radius:50%;transform:translate(-50%,-50%)}
+.cur{width:38px;height:38px;border:1.5px solid var(--red);transition:width .3s,height .3s,background .3s,border-color .3s;mix-blend-mode:difference}
+.cur-dot{width:6px;height:6px;background:var(--red)}
+.cur.big{width:84px;height:84px;background:rgba(193,39,45,.18);border-color:transparent}
+.cur span{position:absolute;inset:0;display:grid;place-items:center;font:600 11px Oswald;letter-spacing:.15em;color:#fff;opacity:0;transition:.3s}
+.cur.big span{opacity:1}
+@media(hover:none){.cur,.cur-dot{display:none}}
+
+/* ===== PRELOADER: vinç logoyu yerine indirir ===== */
+#loader{position:fixed;inset:0;z-index:10000;background:var(--black);overflow:hidden}
+#loader .ld-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(193,39,45,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(193,39,45,.12) 1px,transparent 1px);background-size:40px 40px}
+#loader svg.ldcrane{position:absolute;left:50%;top:0;transform:translateX(-50%);width:min(560px,92vw);height:auto}
+#ldTrolley{animation:ldTrolley 2.4s var(--ease2) forwards}
+#ldRope{transform-origin:top;animation:ldRope 2.4s var(--ease2) forwards}
+#ldLoad{animation:ldLoad 2.4s var(--ease2) forwards}
+@keyframes ldTrolley{0%{transform:translateX(-120px)}55%,100%{transform:translateX(0)}}
+@keyframes ldRope{0%,40%{transform:scaleY(.25)}100%{transform:scaleY(1)}}
+@keyframes ldLoad{0%,40%{transform:translateY(-195px) rotate(4deg)}80%{transform:translateY(0) rotate(-1.5deg)}100%{transform:translateY(0) rotate(0)}}
+#loader .pct{position:absolute;left:5%;bottom:5%;color:#fff;font:700 clamp(3rem,10vw,8rem) Oswald;line-height:1;opacity:.95}
+#loader .pct small{font-size:.25em;color:var(--red);letter-spacing:.3em;display:block}
+#loader .ld-txt{position:absolute;right:5%;bottom:6%;color:var(--grey);font:500 .8rem Oswald;letter-spacing:.35em;text-align:right}
+.ld-door{position:fixed;top:0;bottom:0;width:50.5%;background:var(--red);z-index:10001;transform:scaleX(0)}
+.ld-door.l{left:0;transform-origin:left}.ld-door.r{right:0;transform-origin:right}
+.opening .ld-door{animation:door 1.3s var(--ease2) forwards}
+@keyframes door{0%{transform:scaleX(0)}45%,55%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+.opening .ld-door.l{transform-origin:left}.opening .ld-door.r{transform-origin:right}
+
+/* ===== ÜST BAR ===== */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--red),#ff6a5c);z-index:1001;box-shadow:0 0 12px var(--red)}
+header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:22px 0;transition:.45s var(--ease)}
+header.scrolled{background:rgba(11,11,12,.88);backdrop-filter:blur(14px);padding:10px 0;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+header.hide{transform:translateY(-100%)}
+header .wrap{display:flex;align-items:center;justify-content:space-between}
+.logo img{height:56px;width:auto;transition:height .4s}
+header.scrolled .logo img{height:44px}
+nav ul{display:flex;gap:6px;list-style:none;align-items:center}
+nav a.nl{color:#fff;font-weight:500;font-size:.93rem;padding:10px 16px;display:block;position:relative;overflow:hidden}
+nav a.nl span{display:block;transition:transform .45s var(--ease)}
+nav a.nl::after{content:attr(data-t);position:absolute;left:16px;top:100%;color:var(--red);transition:top .45s var(--ease)}
+nav a.nl:hover span{transform:translateY(-120%)}
+nav a.nl:hover::after{top:10px}
+.nav-cta{background:var(--red);color:#fff;padding:11px 20px!important;font-weight:700;margin-left:10px;border-radius:2px}
+.burger{display:none;background:none;border:0;cursor:pointer;width:34px;height:24px;position:relative;z-index:1002}
+.burger span{position:absolute;left:0;width:100%;height:2px;background:#fff;transition:.35s}
+.burger span:nth-child(1){top:0}.burger span:nth-child(2){top:11px}.burger span:nth-child(3){top:22px}
+.burger.on span:nth-child(1){top:11px;transform:rotate(45deg)}.burger.on span:nth-child(2){opacity:0}.burger.on span:nth-child(3){top:11px;transform:rotate(-45deg)}
+
+/* ===== HERO ===== */
+.hero{height:100vh;min-height:680px;color:#fff;overflow:hidden;background:var(--black)}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:-4%;background-size:cover;background-position:center;opacity:0;transform:scale(1.15);transition:opacity 1.8s ease,transform 9s linear}
+.slide.on{opacity:1;transform:scale(1.02)}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(11,11,12,.93) 0%,rgba(11,11,12,.72) 42%,rgba(11,11,12,.15) 75%),linear-gradient(to top,rgba(11,11,12,.9),transparent 40%)}
+#dust{position:absolute;inset:0;z-index:2;pointer-events:none}
+.hero-crane{position:absolute;right:2%;bottom:0;height:96%;z-index:3;pointer-events:none;will-change:transform}
+.hero-crane svg{height:100%;width:auto;overflow:visible}
+#hcTrolley{animation:trolley 14s var(--ease2) infinite}
+#hcRope{transform-box:fill-box;transform-origin:top;animation:rope 14s var(--ease2) infinite}
+#hcLoad{animation:load 14s var(--ease2) infinite}
+#hcLoadSway{transform-box:fill-box;transform-origin:50% -150px;animation:sway 3.2s ease-in-out infinite}
+@keyframes trolley{0%,8%{transform:translateX(0)}35%,58%{transform:translateX(-230px)}85%,100%{transform:translateX(0)}}
+@keyframes rope{0%,35%{transform:scaleY(1)}45%,50%{transform:scaleY(2.6)}58%,100%{transform:scaleY(1)}}
+@keyframes load{0%,35%{transform:translateY(0)}45%,50%{transform:translateY(200px)}58%,100%{transform:translateY(0)}}
+@keyframes sway{0%,100%{transform:rotate(2.5deg)}50%{transform:rotate(-2.5deg)}}
+.beacon{animation:beacon 1.4s infinite}
+@keyframes beacon{0%,60%,100%{opacity:.15}10%,30%{opacity:1}}
+.hero-in{position:relative;z-index:4;height:100%;display:flex;flex-direction:column;justify-content:center;padding-top:70px;padding-bottom:90px}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font:500 .85rem Oswald;letter-spacing:.32em;color:var(--grey);margin-bottom:24px}
+.eyebrow i{width:54px;height:2px;background:var(--red);display:block;transform-origin:left;transform:scaleX(0);transition:transform 1s .3s var(--ease)}
+.ready .eyebrow i{transform:scaleX(1)}
+.hero h1{font-size:clamp(2.6rem,min(7.4vw,11vh),7rem);font-weight:700;max-width:960px}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em}
+.hero h1 .w b{display:inline-block;transform:translateY(105%) rotate(6deg);transform-origin:left bottom;transition:transform 1.1s var(--ease);font-weight:700}
+.ready .hero h1 .w b{transform:none}
+.hero h1 .red b{color:var(--red);-webkit-text-stroke:0}
+.hero h1 .stroke b{color:transparent;-webkit-text-stroke:1.5px #fff}
+.hero .sub{font-size:1.18rem;max-width:560px;margin:28px 0 40px;color:#d8d8d8;opacity:0;transform:translateY(20px);transition:1s 1s var(--ease)}
+.ready .hero .sub,.ready .hero .btns{opacity:1;transform:none}
+.btns{display:flex;flex-wrap:wrap;gap:14px;opacity:0;transform:translateY(20px);transition:1s 1.2s var(--ease)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;font-weight:700;font-size:.95rem;position:relative;overflow:hidden;z-index:0;letter-spacing:.03em;transition:color .4s;border-radius:2px}
+.btn::before{content:"";position:absolute;left:50%;top:50%;width:0;height:0;border-radius:50%;transform:translate(-50%,-50%);transition:width .6s var(--ease),height .6s var(--ease);z-index:-1}
+.btn:hover::before{width:340px;height:340px}
+.btn-red{background:var(--red);color:#fff}.btn-red::before{background:var(--ink)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.55);color:#fff}.btn-ghost::before{background:#fff}.btn-ghost:hover{color:var(--ink)}
+.btn svg{width:18px;height:18px}
+.hero-foot{position:absolute;left:0;right:0;bottom:34px;z-index:5}
+.hero-foot .wrap{display:flex;justify-content:space-between;align-items:flex-end}
+.sl-count{font:500 .9rem Oswald;letter-spacing:.2em;color:#aaa;display:flex;align-items:center;gap:14px}
+.sl-count b{color:#fff;font-size:1.4rem}
+.sl-bar{width:140px;height:2px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.sl-bar i{position:absolute;inset:0;background:var(--red);transform-origin:left;transform:scaleX(0)}
+.sl-bar i.run{animation:slbar 6s linear forwards}
+@keyframes slbar{to{transform:scaleX(1)}}
+.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:10px;color:#aaa;font:500 .7rem Oswald;letter-spacing:.3em}
+.scroll-cue i{width:1px;height:60px;background:rgba(255,255,255,.25);position:relative;overflow:hidden}
+.scroll-cue i::after{content:"";position:absolute;left:0;top:-30px;width:1px;height:30px;background:var(--red);animation:cue 1.8s infinite}
+@keyframes cue{to{top:60px}}
+
+/* ===== EMNİYET ŞERİDİ ===== */
+.tapes{position:relative;height:190px;overflow:hidden;background:var(--black)}
+.tape{position:absolute;left:-5%;width:110%;padding:14px 0;display:flex;overflow:hidden;white-space:nowrap}
+.tape .run{display:flex;flex-shrink:0;animation:tape 28s linear infinite}
+.tape span{font:700 1.5rem Oswald;letter-spacing:.08em;padding:0 22px;display:flex;align-items:center;gap:22px}
+.tape span::after{content:"";width:12px;height:12px;background:currentColor;transform:rotate(45deg)}
+.t1{top:40px;background:var(--red);color:#fff;transform:rotate(-3deg);z-index:2;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.t2{top:90px;background:repeating-linear-gradient(-45deg,#111 0 22px,#1f1f1f 22px 44px);color:#fff;transform:rotate(2.5deg)}
+.t2 .run{animation-direction:reverse;animation-duration:34s}
+@keyframes tape{to{transform:translateX(-100%)}}
+
+/* ===== REVEAL ===== */
+.rv{opacity:0;transform:translateY(60px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.rv.l{transform:translateX(-70px)}.rv.r{transform:translateX(70px)}.rv.z{transform:scale(.88)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}.d4{transition-delay:.4s!important}.d5{transition-delay:.5s!important}
+/* kırmızı perde ile görsel açılışı */
+.wipe{position:relative;overflow:hidden}
+.wipe::after{content:"";position:absolute;inset:0;background:var(--red);transform-origin:left;transform:scaleX(0);z-index:3}
+.wipe img{opacity:0;transform:scale(1.25)}
+.wipe.in::after{animation:wipe 1.4s var(--ease2) forwards}
+.wipe.in img{animation:wipeImg 1.4s var(--ease2) forwards}
+@keyframes wipe{0%{transform:scaleX(0);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}50.1%{transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}
+@keyframes wipeImg{0%,50%{opacity:0;transform:scale(1.25)}50.1%{opacity:1}100%{opacity:1;transform:scale(1)}}
+/* kelime kelime başlık */
+.split .sw{display:inline-block;overflow:hidden;vertical-align:top}
+.split .sw>i{display:inline-block;font-style:normal;transform:translateY(110%);transition:transform .9s var(--ease)}
+.split.in .sw>i{transform:none}
+
+.tag{font:500 .85rem Oswald;color:var(--red);letter-spacing:.3em;display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.tag::before{content:"";width:34px;height:2px;background:var(--red)}
+.h2{font-size:clamp(2.1rem,4.6vw,3.8rem);margin-bottom:26px}
+
+/* ===== HAKKIMIZDA ===== */
+.about{padding:140px 0 120px;overflow:hidden}
+.about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+.ab-visual{position:relative;height:640px}
+.ab-visual .a1{position:absolute;left:0;top:0;width:72%;height:80%}
+.ab-visual .a2{position:absolute;right:0;bottom:0;width:52%;height:52%;border:10px solid #fff;box-shadow:0 30px 60px rgba(0,0,0,.18);z-index:2}
+.ab-visual img{width:100%;height:100%;object-fit:cover}
+.ab-visual .frame{position:absolute;left:-26px;top:-26px;width:45%;height:45%;border:3px solid var(--red);z-index:-1}
+.exp{position:absolute;left:38%;bottom:6%;z-index:4;width:150px;height:150px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 20px 50px rgba(193,39,45,.45)}
+.exp b{font:700 2.8rem Oswald;line-height:1;display:block}
+.exp small{font:500 .7rem Oswald;letter-spacing:.15em}
+.exp svg{position:absolute;inset:-14px;width:178px;height:178px;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.about .lead{font-size:1.18rem;color:var(--ink);font-weight:500;margin-bottom:18px}
+.about p{color:#5a5a5a;margin-bottom:14px}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:100px}
+.pillar{padding:42px 32px;background:var(--light);position:relative;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s;transform-style:preserve-3d}
+.pillar::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(193,39,45,.14),transparent 45%);opacity:0;transition:opacity .4s}
+.pillar:hover::before{opacity:1}
+.pillar:hover{box-shadow:0 30px 60px rgba(0,0,0,.12)}
+.pillar img{height:76px;width:auto;margin-bottom:24px;transition:transform .6s var(--ease)}
+.pillar:hover img{transform:translateY(-6px) rotate(-6deg) scale(1.08)}
+.pillar h3{font-size:1.35rem;margin-bottom:10px}
+.pillar p{font-size:.95rem;color:#5a5a5a}
+.pillar .bar{position:absolute;left:0;bottom:0;height:4px;width:0;background:var(--red);transition:width .6s var(--ease)}
+.pillar:hover .bar{width:100%}
+
+/* ===== BİNA YÜKSELİYOR (scroll ile kat kat inşa) ===== */
+.build{height:320vh;background:linear-gradient(#0b0b0c,#17181b)}
+.build-sticky{position:sticky;top:0;height:100vh;overflow:hidden;color:#fff;display:flex;align-items:center}
+.build-sky{position:absolute;inset:0;background:linear-gradient(180deg,#0b0b0c 0%,#1c1415 60%,#3a1416 100%);opacity:var(--sky,0)}
+.build-sticky .h2{font-size:clamp(2rem,3.8vw,3.2rem)}
+.build-sticky .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center;position:relative;z-index:2}
+.phase{list-style:none;margin-top:30px}
+.phase li{display:flex;gap:18px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);opacity:.3;transition:.5s}
+.phase li.on{opacity:1}
+.phase li b{font:600 1rem Oswald;width:42px;height:42px;flex-shrink:0;border:1.5px solid #444;display:grid;place-items:center;transition:.5s}
+.phase li.on b{background:var(--red);border-color:var(--red)}
+.phase h4{font-size:1.15rem;letter-spacing:.05em}
+.phase p{font-size:.9rem;color:#aaa}
+.b-meter{font:700 clamp(3rem,6vw,5rem) Oswald;line-height:1;margin-top:26px}
+.b-meter small{font-size:.28em;color:var(--grey);letter-spacing:.2em;display:block;margin-top:6px}
+#bsvg{width:100%;height:78vh;overflow:visible}
+#bsvg .fl{transition:transform .6s var(--ease),opacity .6s}
+#bsvg .win{transition:fill .8s}
+
+/* ===== ÖNCE / SONRA ===== */
+.ba{padding:130px 0;background:#fff}
+.ba-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:70px;align-items:center}
+.ba-box{position:relative;aspect-ratio:4/5;overflow:hidden;user-select:none;cursor:ew-resize;box-shadow:0 30px 70px rgba(0,0,0,.2)}
+.ba-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-box .after{clip-path:inset(0 0 0 var(--p,50%))}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;background:#fff;transform:translateX(-50%);z-index:3}
+.ba-handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:1.4rem;box-shadow:0 0 0 8px rgba(255,255,255,.3)}
+.ba-lbl{position:absolute;top:20px;z-index:2;background:rgba(11,11,12,.75);color:#fff;font:600 .8rem Oswald;letter-spacing:.2em;padding:8px 14px}
+.ba-lbl.a{left:20px}.ba-lbl.b{right:20px;background:var(--red)}
+.ba-hint{animation:hint 2.5s ease-in-out 2}
+@keyframes hint{0%,100%{--p:50%}}
+
+/* ===== PROJELER: yatay kaydırmalı galeri ===== */
+.hscroll{background:var(--ink);color:#fff}
+.hs-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.hs-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:40px}
+.hs-head .h2{margin:0;color:#fff;font-size:clamp(1.8rem,3.4vw,3rem)}
+.tabs{display:flex;gap:8px}
+.tabs button{background:none;border:1px solid #444;color:#ccc;font:500 .85rem Oswald;letter-spacing:.15em;padding:12px 20px;cursor:pointer;transition:.35s}
+.tabs button.on,.tabs button:hover{background:var(--red);border-color:var(--red);color:#fff}
+.hs-track{display:flex;gap:28px;padding-left:4vw;will-change:transform}
+.pcard{flex-shrink:0;width:min(400px,78vw);height:min(540px,56vh);position:relative;overflow:hidden;cursor:pointer;transform-style:preserve-3d;transition:transform .3s,opacity .5s,filter .5s}
+.pcard img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.pcard:hover img{transform:scale(1.08)}
+.pcard::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,12,.95) 0%,transparent 55%);z-index:1}
+.pcard .pc{position:absolute;left:28px;right:28px;bottom:26px;z-index:2;transform:translateZ(40px)}
+.pcard .pc small{font:500 .75rem Oswald;letter-spacing:.25em;color:var(--red2)}
+.pcard .pc h3{font-size:1.8rem;margin-top:6px}
+.pcard .st{position:absolute;top:20px;left:20px;z-index:2;font:600 .7rem Oswald;letter-spacing:.2em;padding:7px 12px;background:var(--red)}
+.pcard .st.done{background:#fff;color:var(--ink)}
+.pcard .zoom{position:absolute;top:20px;right:20px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.5);display:grid;place-items:center;opacity:0;transform:scale(.6);transition:.4s}
+.pcard:hover .zoom{opacity:1;transform:none}
+.pcard.dim{opacity:.18;filter:grayscale(1)}
+.hs-prog{margin:40px 4vw 0;height:2px;background:#333;position:relative}
+.hs-prog i{position:absolute;left:0;top:0;bottom:0;background:var(--red);width:0}
+
+/* ===== HİZMETLER ===== */
+.services{padding:140px 0;background:#fff}
+.svc-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:70px}
+.svc-head p{color:#5a5a5a}
+.svc-list{border-top:1px solid #e5e5e5}
+.svc{display:grid;grid-template-columns:80px 90px 1fr 1.3fr 60px;gap:30px;align-items:center;padding:34px 10px;border-bottom:1px solid #e5e5e5;position:relative;overflow:hidden;transition:color .5s;z-index:0}
+.svc::before{content:"";position:absolute;inset:0;background:var(--ink);transform:scaleY(0);transform-origin:bottom;transition:transform .6s var(--ease);z-index:-1}
+.svc:hover{color:#fff}
+.svc:hover::before{transform:scaleY(1)}
+.svc .n{font:600 1.1rem Oswald;color:var(--red)}
+.svc img.ic{height:62px;width:auto;transition:transform .5s var(--ease),filter .5s}
+.svc:hover img.ic{transform:scale(1.15) rotate(-6deg);filter:brightness(0) invert(1)}
+.svc h3{font-size:clamp(1.3rem,2.3vw,1.9rem)}
+.svc p{font-size:.95rem;color:#666;transition:color .5s}
+.svc:hover p{color:#bbb}
+.svc .ar{width:52px;height:52px;border-radius:50%;border:1px solid #ccc;display:grid;place-items:center;transition:.5s;font-size:1.2rem}
+.svc:hover .ar{background:var(--red);border-color:var(--red);transform:rotate(-45deg)}
+.svc-float{position:fixed;width:300px;height:210px;pointer-events:none;z-index:50;overflow:hidden;opacity:0;transform:translate(-50%,-50%) scale(.6) rotate(-6deg);transition:opacity .35s,transform .45s var(--ease);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.svc-float.on{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-3deg)}
+.svc-float img{width:100%;height:100%;object-fit:cover}
+
+/* ===== İSTATİSTİK ===== */
+.stats{padding:140px 0;color:#fff;overflow:hidden;background:var(--black)}
+.stats-bg{position:absolute;inset:-20% 0;background-size:cover;background-position:center;opacity:.45;will-change:transform}
+.stats::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,11,12,.85),rgba(11,11,12,.4))}
+.stats .wrap{position:relative;z-index:2}
+.st-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px}
+.stat{padding:34px 28px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(6px);position:relative;overflow:hidden}
+.stat b{font:700 clamp(2.8rem,5vw,4.4rem) Oswald;display:block;line-height:1}
+.stat b i{font-style:normal;color:var(--red)}
+.stat span{color:#ccc;letter-spacing:.12em;font-size:.85rem;text-transform:uppercase;margin-top:12px;display:block}
+.stat .lv{position:absolute;left:0;bottom:0;height:3px;background:var(--red);width:0;transition:width 2.2s var(--ease)}
+.stat.in .lv{width:100%}
+
+/* ===== BAŞKANIN MESAJI ===== */
+.chair{padding:140px 0;background:var(--light);overflow:hidden}
+.ch-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:center}
+.ch-img{position:relative}
+.ch-img .wipe{aspect-ratio:4/5}
+.ch-img img{width:100%;height:100%;object-fit:cover}
+.ch-img .nm{position:absolute;right:-30px;bottom:40px;background:var(--ink);color:#fff;padding:22px 28px;z-index:4}
+.ch-img .nm h4{font-size:1.4rem}
+.ch-img .nm small{color:var(--red2);font:500 .8rem Oswald;letter-spacing:.2em}
+.ch-text blockquote{font-size:1.18rem;color:#333;border-left:3px solid var(--red);padding-left:26px;margin-bottom:20px}
+.ch-text p{color:#5a5a5a;margin-bottom:14px}
+.sign{margin-top:24px;width:230px;background:var(--ink);padding:12px 18px;clip-path:inset(0 100% 0 0);transition:clip-path 2.4s var(--ease2) .3s}
+.sign.in{clip-path:inset(0 0 0 0)}
+
+/* ===== NEDEN KAYA PARK ===== */
+.why{padding:140px 0;overflow:hidden}
+.why-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:80px;align-items:start}
+.why-sticky{position:sticky;top:120px}
+.why-sticky .wipe{aspect-ratio:3/4}
+.why-sticky img{width:100%;height:100%;object-fit:cover}
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.wi{padding:26px;border:1px solid #eee;transition:.45s var(--ease);position:relative;background:#fff}
+.wi:hover{border-color:var(--red);transform:translateY(-6px);box-shadow:0 20px 40px rgba(193,39,45,.12)}
+.wi img{height:52px;width:auto;margin-bottom:14px}
+.wi .mono{width:52px;height:52px;background:var(--red);display:grid;place-items:center;color:#fff;font:700 1.4rem Oswald;margin-bottom:14px}
+.wi h4{font-size:1.05rem;letter-spacing:.05em}
+.wi p{font-size:.9rem;color:#666;margin-top:6px}
+
+/* ===== SÜRDÜRÜLEBİLİRLİK ===== */
+.sus{padding:130px 0;background:var(--ink);color:#fff;overflow:hidden}
+.sus .h2{color:#fff}
+.sus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#333;margin-top:50px;border:1px solid #333}
+.su{background:var(--ink);padding:40px 34px;transition:background .5s;position:relative}
+.su:hover{background:#25262a}
+.su .ic{width:58px;height:58px;margin-bottom:22px}
+.su .ic svg{width:100%;height:100%;stroke:var(--red);fill:none;stroke-width:1.6;stroke-dasharray:120;stroke-dashoffset:120;transition:stroke-dashoffset 1.6s var(--ease)}
+.su.in .ic svg{stroke-dashoffset:0}
+.su h3{font-size:1.15rem;margin-bottom:10px}
+.su p{font-size:.92rem;color:#aaa}
+.su.wide{grid-column:1/-1;text-align:center;padding:60px 34px;background:linear-gradient(120deg,#8f1a1f,var(--red))}
+.su.wide h3{font-size:clamp(1.8rem,3.4vw,2.8rem)}
+.su.wide p{color:#ffe1e2;max-width:680px;margin:12px auto 0;font-size:1.05rem}
+
+/* ===== YORUMLAR ===== */
+.testi{padding:140px 0;background:#fff;overflow:hidden}
+.t-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.t-img .wipe{aspect-ratio:4/5}
+.t-img img{width:100%;height:100%;object-fit:cover}
+.t-stage{position:relative;min-height:400px}
+.tq{position:absolute;inset:0;opacity:0;transform:translateX(40px);transition:opacity .7s,transform .7s var(--ease);pointer-events:none}
+.tq.on{opacity:1;transform:none;pointer-events:auto}
+.tq .stars{color:var(--red);letter-spacing:4px;font-size:1.2rem}
+.tq h3{font-size:clamp(1.6rem,3vw,2.4rem);margin:14px 0 18px}
+.tq p{font-size:1.1rem;color:#555}
+.tq .who{display:flex;align-items:center;gap:14px;margin-top:26px}
+.tq .who i{width:52px;height:52px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:600 1.1rem Oswald;font-style:normal}
+.tq .who small{display:block;color:#888}
+.t-nav{display:flex;gap:12px;align-items:center;margin-top:10px}
+.t-nav button{width:54px;height:54px;border-radius:50%;border:1px solid #ddd;background:#fff;cursor:pointer;font-size:1.2rem;transition:.35s}
+.t-nav button:hover{background:var(--red);border-color:var(--red);color:#fff}
+.t-nav .tc{font:600 1rem Oswald;letter-spacing:.2em;margin-left:10px}
+
+/* ===== ÇÖZÜM ORTAKLARI ===== */
+.partners{padding:100px 0;background:var(--light);overflow:hidden}
+.partners .tag{justify-content:center}.partners .tag::before{display:none}
+.partners h2{text-align:center;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:50px}
+.marquee{display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq{display:flex;gap:26px;align-items:center;padding-right:26px;animation:mqa 50s linear infinite;flex-shrink:0}
+.marquee:hover .mq{animation-play-state:paused}
+.mq div{background:#fff;padding:14px 24px;height:96px;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,0,0,.05)}
+.mq img{height:62px;width:auto;filter:grayscale(1);opacity:.7;transition:.4s}
+.mq div:hover img{filter:none;opacity:1;transform:scale(1.08)}
+.marquee.rev .mq{animation-direction:reverse}
+.marquee+.marquee{margin-top:22px}
+@keyframes mqa{to{transform:translateX(-100%)}}
+
+/* ===== İLETİŞİM ===== */
+.contact{padding:140px 0;background:#fff}
+.c-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:60px}
+.c-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.cc{padding:26px;background:var(--light);transition:.45s var(--ease);display:block}
+.cc:hover{background:var(--ink);color:#fff;transform:translateY(-5px)}
+.cc img{height:42px;width:auto;margin-bottom:12px;transition:filter .45s}
+.cc:hover img{filter:brightness(0) invert(1)}
+.cc small{display:block;font:500 .75rem Oswald;letter-spacing:.2em;color:var(--red)}
+.cc b{display:block;margin-top:4px;font-size:1rem}
+.map{position:relative;min-height:480px;overflow:hidden}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.9) contrast(1.1)}
+.map .pin{position:absolute;left:50%;top:50%;z-index:2;pointer-events:none;transform:translate(-50%,-100%)}
+.map .pin i{display:block;width:22px;height:22px;background:var(--red);border-radius:50% 50% 50% 0;transform:rotate(-45deg);animation:pinb 1.6s ease-in-out infinite}
+.map .pin::after{content:"";position:absolute;left:50%;bottom:-8px;width:40px;height:40px;margin-left:-20px;border-radius:50%;border:2px solid var(--red);animation:ping 1.6s infinite}
+@keyframes pinb{0%,100%{transform:rotate(-45deg) translate(0,0)}50%{transform:rotate(-45deg) translate(4px,-4px)}}
+@keyframes ping{0%{transform:scale(.3);opacity:1}100%{transform:scale(1.8);opacity:0}}
+
+/* ===== CTA + FOOTER ===== */
+.cta{position:relative;padding:120px 0;overflow:hidden;color:#fff;background:var(--black)}
+.cta-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.35}
+.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(193,39,45,.92),rgba(193,39,45,.55))}
+.cta .wrap{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.cta h2{font-size:clamp(2rem,4vw,3.3rem);max-width:700px}
+.cta .btn-red{background:#fff;color:var(--red)}.cta .btn-red:hover{color:#fff}
+footer{background:var(--black);color:#9a9a9a;padding:100px 0 0;overflow:hidden;position:relative}
+.f-big{font:700 clamp(4rem,15vw,14rem) Oswald;color:transparent;-webkit-text-stroke:1px #2a2a2a;white-space:nowrap;line-height:.9;margin-top:60px;text-align:center;user-select:none}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px}
+.flogo{height:70px;width:auto;margin-bottom:22px}
+footer h4{color:#fff;letter-spacing:.12em;margin-bottom:20px;font-size:1.05rem}
+footer ul{list-style:none}
+footer li{margin-bottom:10px}
+footer li a{transition:.3s;display:inline-block}
+footer li a:hover{color:var(--red2);transform:translateX(6px)}
+.socials{display:flex;gap:12px;margin-top:20px}
+.socials a{width:44px;height:44px;border:1px solid #333;display:grid;place-items:center;border-radius:50%;transition:.35s}
+.socials a:hover{background:var(--red);border-color:var(--red);transform:translateY(-4px)}
+.socials svg{width:18px;height:18px;fill:#fff}
+.copy{border-top:1px solid #1f1f1f;padding:24px 0;text-align:center;font-size:.88rem;position:relative;z-index:2}
+
+/* ===== LIGHTBOX ===== */
+.lb{position:fixed;inset:0;z-index:5000;background:rgba(11,11,12,.95);display:grid;place-items:center;opacity:0;visibility:hidden;transition:.45s}
+.lb.on{opacity:1;visibility:visible}
+.lb img{max-width:88vw;max-height:80vh;transform:scale(.85);transition:transform .5s var(--ease);box-shadow:0 40px 80px rgba(0,0,0,.6)}
+.lb.on img{transform:none}
+.lb p{color:#fff;font:600 1.3rem Oswald;letter-spacing:.1em;text-align:center;margin-top:18px}
+.lb button{position:absolute;background:none;border:1px solid #555;color:#fff;width:54px;height:54px;border-radius:50%;cursor:pointer;font-size:1.3rem;transition:.3s}
+.lb button:hover{background:var(--red);border-color:var(--red)}
+.lb .x{top:26px;right:26px}.lb .pv{left:26px;top:50%}.lb .nx{right:26px;top:50%}
+
+.wa{position:fixed;right:24px;bottom:24px;z-index:900;width:62px;height:62px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45)}
+.wa::before,.wa::after{content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;animation:pulse 2.4s infinite;z-index:-1}
+.wa::after{animation-delay:1.2s}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(2);opacity:0}}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1000px){
+  nav{position:fixed;inset:0;background:rgba(11,11,12,.98);display:flex;align-items:center;justify-content:center;clip-path:circle(0 at calc(100% - 40px) 40px);transition:clip-path .8s var(--ease2)}
+  nav.open{clip-path:circle(150% at calc(100% - 40px) 40px)}
+  nav ul{flex-direction:column;gap:10px}
+  nav a.nl{font:600 1.8rem Oswald}
+  .burger{display:block}
+  .about-grid,.ch-grid,.why-grid,.svc-head,.ba-grid,.t-grid,.c-grid,.build-sticky .h2{font-size:clamp(2rem,3.8vw,3.2rem)}
+.build-sticky .wrap{grid-template-columns:1fr;gap:50px}
+  .ab-visual{height:520px}
+  .pillars,.sus-grid{grid-template-columns:1fr 1fr}
+  .st-grid{grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .hero-crane{opacity:.35;right:-10%}
+  .svc{grid-template-columns:34px 48px minmax(0,1fr) 44px;gap:14px}
+  .svc img.ic{height:42px}.svc .ar{width:42px;height:42px}
+  .svc p{display:none}
+  .why-sticky{position:relative;top:0}
+  .build{height:auto}
+  .build-sticky{position:relative;height:auto;padding:110px 0}
+  #bsvg{height:60vh}
+  .ch-img .nm{right:10px}
+}
+@media(max-width:640px){
+  .pillars,.sus-grid,.why-list,.f-grid,.c-cards{grid-template-columns:1fr}
+  .hs-head{flex-direction:column;align-items:flex-start}
+  .tabs{flex-wrap:wrap}
+  .ab-visual{height:420px}
+  .exp{width:120px;height:120px;left:5%}.exp svg{width:148px;height:148px}.exp b{font-size:2.1rem}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.wipe img{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body class="lock">
+
+<!-- ÖZEL İMLEÇ -->
+<div class="cur" id="cur"><span>GÖR</span></div><div class="cur-dot" id="curDot"></div>
+
+<!-- PRELOADER -->
+<div id="loader">
+  <div class="ld-grid"></div>
+  <svg class="ldcrane" viewBox="0 0 560 520" fill="none">
+    <!-- direk -->
+    <g stroke="#3a3a3a" stroke-width="3" id="ldMast"></g>
+    <!-- bom -->
+    <path d="M30 70H540M30 92H540" stroke="#555" stroke-width="3"/>
+    <g id="ldJib" stroke="#444" stroke-width="1.5"></g>
+    <rect x="30" y="66" width="70" height="36" fill="#2a2a2a"/>
+    <circle cx="282" cy="20" r="4" fill="#C1272D" class="beacon"/>
+    <path d="M282 24L60 70M282 24L520 70" stroke="#555" stroke-width="1.5"/>
+    <g id="ldTrolley">
+      <rect x="378" y="92" width="44" height="12" fill="#C1272D"/>
+      <line id="ldRope" x1="400" y1="104" x2="400" y2="330" stroke="#888" stroke-width="2"/>
+      <g id="ldLoad">
+        <path d="M400 330l-70 40M400 330l70 40" stroke="#888" stroke-width="1.5"/>
+        <image href="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=600,fit=crop/MpWnqdGHvgnUKbie/beyaz-ME0mtXlXB2IDEoK2.png" x="300" y="370" width="200" height="70" preserveAspectRatio="xMidYMid meet"/>
+      </g>
+    </g>
+  </svg>
+  <div class="pct"><span id="pct">0</span>%<small>YÜKLENİYOR</small></div>
+  <div class="ld-txt">KAYA PARK İNŞAAT<br>GÜVENLİ YAPILAR, MUTLU YARINLAR</div>
+</div>
+<div class="ld-door l"></div><div class="ld-door r"></div>
+<div id="progress"></div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="wrap">
+    <a href="#anasayfa" class="logo" data-cur><img data-k="beyaz-ME0mtXlXB2IDEoK2.png" data-w="400" alt="Kaya Park İnşaat logo"></a>
+    <nav id="nav">
+      <ul>
+        <li><a class="nl" href="#anasayfa" data-t="Anasayfa"><span>Anasayfa</span></a></li>
+        <li><a class="nl" href="#kaya-park" data-t="Kaya Park"><span>Kaya Park</span></a></li>
+        <li><a class="nl" href="#projeler" data-t="Projeler"><span>Projeler</span></a></li>
+        <li><a class="nl" href="#hizmetlerimiz" data-t="Hizmetlerimiz"><span>Hizmetlerimiz</span></a></li>
+        <li><a class="nl" href="#iletisim" data-t="İletişim"><span>İletişim</span></a></li>
+        <li><a class="nl" href="https://kayaparkinsaat.com.tr/sorular" data-t="Sorular"><span>Sorular</span></a></li>
+        <li><a class="nl nav-cta" href="tel:+905326771100" data-t="Hemen Ara"><span>Hemen Ara</span></a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="anasayfa">
+  <div class="slides" id="slides"></div>
+  <canvas id="dust"></canvas>
+  <div class="hero-crane" id="heroCrane">
+    <svg viewBox="0 0 520 900" fill="none" id="hcSvg">
+      <g id="hcMast" stroke="rgba(255,255,255,.55)" stroke-width="2.4"></g>
+      <!-- kabin -->
+      <rect x="300" y="182" width="44" height="34" fill="#1d1e20" stroke="rgba(255,255,255,.6)" stroke-width="2"/>
+      <rect x="306" y="188" width="18" height="14" fill="rgba(255,190,120,.55)"/>
+      <!-- tepe -->
+      <path d="M322 70L300 160H344Z" stroke="rgba(255,255,255,.55)" stroke-width="2.4"/>
+      <circle cx="322" cy="64" r="5" fill="#ff2a2a" class="beacon"/>
+      <!-- bom -->
+      <path d="M-20 160H470M-20 180H470" stroke="rgba(255,255,255,.7)" stroke-width="3"/>
+      <g id="hcJib" stroke="rgba(255,255,255,.4)" stroke-width="1.4"></g>
+      <path d="M322 70L20 160M322 70L470 160" stroke="rgba(255,255,255,.45)" stroke-width="1.6"/>
+      <!-- karşı ağırlık -->
+      <rect x="400" y="180" width="70" height="42" fill="#C1272D"/>
+      <path d="M400 192h70M400 206h70" stroke="rgba(0,0,0,.35)"/>
+      <circle cx="470" cy="156" r="4" fill="#ff2a2a" class="beacon" style="animation-delay:.7s"/>
+      <!-- araba + halat + yük -->
+      <g id="hcTrolley">
+        <rect x="230" y="180" width="40" height="11" fill="#C1272D"/>
+        <line id="hcRope" x1="250" y1="191" x2="250" y2="320" stroke="rgba(255,255,255,.7)" stroke-width="1.6"/>
+        <g id="hcLoad"><g id="hcLoadSway">
+          <path d="M250 320l-52 30M250 320l52 30" stroke="rgba(255,255,255,.6)" stroke-width="1.3"/>
+          <rect x="246" y="314" width="8" height="10" fill="#e8c34a"/>
+          <!-- çelik I-kiriş -->
+          <rect x="182" y="350" width="136" height="7" fill="#C1272D"/>
+          <rect x="246" y="357" width="8" height="18" fill="#9c1d22"/>
+          <rect x="182" y="375" width="136" height="7" fill="#C1272D"/>
+          <rect x="188" y="357" width="124" height="18" fill="#7d171b"/>
+        </g></g>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-in wrap">
+    <div class="eyebrow"><i></i>KAYA PARK İNŞAAT · 30+ YIL · KÜÇÜKÇEKMECE</div>
+    <h1>
+      <span class="w"><b>Güvenli</b></span> <span class="w"><b>Yapılar,</b></span><br>
+      <span class="w red"><b>Mutlu</b></span> <span class="w stroke"><b>Yarınlar</b></span>
+    </h1>
+    <p class="sub">Şehrin geleceğine bugünden iz bırakıyoruz. Sadece bina değil, güvenli bir gelecek inşa ediyoruz.</p>
+    <div class="btns">
+      <a class="btn btn-red" href="tel:+905326771100" data-cur><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>Telefon</a>
+      <a class="btn btn-ghost" href="https://wa.me/905326771100" target="_blank" data-cur><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 00-10.3 18L0 24l6.2-1.6A12 12 0 1012 0zm5.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.7-1c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/></svg>WhatsApp</a>
+      <a class="btn btn-ghost" href="#iletisim" data-cur>Başvuru Formu</a>
+    </div>
+  </div>
+  <div class="hero-foot">
+    <div class="wrap">
+      <div class="sl-count"><b id="slNum">01</b> / 05 <div class="sl-bar"><i id="slBar"></i></div></div>
+      <a href="#kaya-park" class="scroll-cue">KAYDIR<i></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- EMNİYET ŞERİTLERİ -->
+<div class="tapes">
+  <div class="tape t1"><div class="run" id="tape1"></div></div>
+  <div class="tape t2"><div class="run" id="tape2"></div></div>
+</div>
+
+<!-- HAKKIMIZDA -->
+<section class="about" id="kaya-park">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="ab-visual">
+        <div class="frame rv"></div>
+        <div class="a1 wipe"><img data-k="insaatin-kizil-ritmi-kopya-7tLLmblrySwK1vVD.png" data-w="1000" alt="Kaya Park İnşaat şantiye"></div>
+        <div class="a2 wipe d3" style="--d:.3s"><img data-k="image-28-h8S0RKWA2NPdG5A7.png" data-w="800" alt="Kaya Park İnşaat ustası"></div>
+        <div class="exp rv z d4">
+          <svg viewBox="0 0 178 178"><defs><path id="circ" d="M89 89m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><text font-family="Oswald" font-size="11" letter-spacing="5" fill="#fff"><textPath href="#circ">GÜVEN • KALİTE • TİTİZLİK • DENEYİM • </textPath></text></svg>
+          <div><b>30+</b><small>YILLIK DENEYİM</small></div>
+        </div>
+      </div>
+      <div>
+        <div class="tag rv">KAYA PARK</div>
+        <h2 class="h2 split">Şehrin geleceğine bugünden iz bırakıyoruz.</h2>
+        <p class="lead rv d1">Kaya Park İnşaat olarak faaliyetlerimizi yalnızca yapı üretmek olarak görmüyor; insanların güvenle yaşayabileceği, kendini ait hissedebileceği ve yıllar boyunca değerini koruyacak mekanlar oluşturma sorumluluğuyla hareket ediyoruz.</p>
+        <p class="rv d2">Bizim için başarılı bir proje; tamamlandığı gün değil, yıllar sonra da kalitesini, güvenini ve değerini koruyabildiği gün gerçek anlamına ulaşır. Bu nedenle her çalışmamızda kısa vadeli çözümler yerine, uzun ömürlü ve sürdürülebilir yapı anlayışını benimsiyoruz.</p>
+        <p class="rv d3">Kaya Park İnşaat için kalite, yalnızca kullanılan malzemenin veya ortaya çıkan görüntünün ötesindedir. Doğru işçilik, şeffaf süreç yönetimi, detaylara gösterilen özen ve işin arkasında durabilmek bizim kalite anlayışımızın temelini oluşturur.</p>
+        <p class="rv d4">Bugün attığımız her temel, gelecekte bir ailenin yuvasına, bir işletmenin merkezine veya yeni bir yaşamın başlangıcına dönüşüyor. Biz de bu sorumluluğun bilinciyle, sağlamlığından estetiğine kadar her ayrıntısı düşünülmüş yapılar inşa ediyoruz.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar tilt rv d1"><img data-k="a2-UmZCx3aVWjX0pF0U.png" data-w="200" alt="30+ Yıllık Deneyim ikonu"><h3>30+ Yıllık Deneyim</h3><p>Sektörde 30 yılı aşkın deneyimimizle; güçlü bilgi birikimimizi modern mühendislik anlayışıyla birleştiriyor, her projeyi güven, kalite ve titizlikle hayata geçiriyoruz.</p><i class="bar"></i></div>
+      <div class="pillar tilt rv d2"><img data-k="a1-QXQpRjcu6nOmf6go.png" data-w="200" alt="Planlı ve Güvenilir Süreç ikonu"><h3>Planlı ve Güvenilir Süreç</h3><p>Projenin ilk adımından teslim aşamasına kadar tüm süreçleri planlı, kontrollü ve şeffaf bir anlayışla yönetiyor; zamanında ve güvenilir çözümler sunuyoruz.</p><i class="bar"></i></div>
+      <div class="pillar tilt rv d3"><img data-k="a3-QVgGUzDh5Z3NFcjC.png" data-w="200" alt="Modern Yapılar ikonu"><h3>Modern Yapılar</h3><p>Estetik, fonksiyonellik ve dayanıklılığı bir araya getirerek yalnızca bugünün değil, geleceğin ihtiyaçlarına da cevap veren, yaşam kalitesini yükselten modern yapılar inşa ediyoruz.</p><i class="bar"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- BİNA YÜKSELİYOR -->
+<section class="build" id="build">
+  <div class="build-sticky">
+    <div class="build-sky" id="bsky"></div>
+    <div class="wrap">
+      <div>
+        <div class="tag">PLANLI SÜREÇ</div>
+        <h2 class="h2" style="color:#fff">Temelden anahtara,<br>kat kat güven.</h2>
+        <ul class="phase" id="phase">
+          <li><b>01</b><div><h4>Proje &amp; Ruhsat</h4><p>Planlama, ruhsat ve inşaat süreçlerini tek merkezden yönetiyoruz.</p></div></li>
+          <li><b>02</b><div><h4>Temel &amp; Kaba İnşaat</h4><p>Sağlam zemin, güvenli yapılar, huzurlu yaşam alanları.</p></div></li>
+          <li><b>03</b><div><h4>İnce İşler</h4><p>Kaliteli malzeme ve titiz işçilikle projeleri zamanında tamamlıyoruz.</p></div></li>
+          <li><b>04</b><div><h4>Anahtar Teslim</h4><p>Temelden anahtara kadar tüm inşaat süreçlerini profesyonelce yürütüyoruz.</p></div></li>
+        </ul>
+        <div class="b-meter"><span id="bPct">0</span>%<small>İNŞAAT İLERLEMESİ</small></div>
+      </div>
+      <svg id="bsvg" viewBox="0 0 600 700"></svg>
+    </div>
+  </div>
+</section>
+
+<!-- PROJELER: YATAY GALERİ -->
+<section class="hscroll" id="projeler">
+  <div class="hs-sticky">
+    <div class="wrap hs-head">
+      <div>
+        <div class="tag">PROJELERİMİZ İLE TANIŞIN</div>
+        <h2 class="h2">Güvenle Yükselen Yapılar,<br>Geleceğe Kalan Eserler</h2>
+      </div>
+      <div class="tabs" id="tabs">
+        <button class="on" data-f="all">TÜMÜ</button>
+        <button data-f="kaya">KAYA KONUTLARI</button>
+        <button data-f="done">TAMAMLANAN</button>
+        <button data-f="cont">DEVAM EDEN</button>
+      </div>
+    </div>
+    <div class="hs-track" id="hsTrack"></div>
+    <div class="hs-prog"><i id="hsProg"></i></div>
+  </div>
+</section>
+
+<!-- ÖNCE / SONRA -->
+<section class="ba">
+  <div class="wrap ba-grid">
+    <div>
+      <div class="tag rv">ŞANTİYEDEN TESLİME</div>
+      <h2 class="h2 split">Sözümüzü yapıyla tutuyoruz.</h2>
+      <p class="rv d1" style="color:#5a5a5a">Kaydırıcıyı sürükleyin: İstasyon Mahallesi, Genç Osman Sokak'taki projemizin şantiye hâli ile teslim edilen hâli. Kentsel dönüşüm sürecinizi profesyonelce yönetiyor, güvenli, modern ve değerli yaşam alanları inşa ediyoruz.</p>
+      <a class="btn btn-red rv d2" style="margin-top:26px" href="https://kayaparkinsaat.com.tr/yarisibizden" data-cur>Yarısı Bizden Proje →</a>
+    </div>
+    <div class="ba-box rv z" id="baBox" data-cur>
+      <img data-k="a1-rtSTJZfhbAyJAICx.jpg" data-w="1100" alt="Şantiye hâli">
+      <img class="after" data-k="genc-osman-sokak-2-mqKsHaFG3NEDSIkB.jpg" data-w="1100" alt="Teslim edilen hâli">
+      <span class="ba-lbl a">ŞANTİYE</span><span class="ba-lbl b">TESLİM</span>
+      <div class="ba-handle"></div>
+    </div>
+  </div>
+</section>
+
+<!-- HİZMETLER -->
+<section class="services" id="hizmetlerimiz">
+  <div class="wrap">
+    <div class="svc-head">
+      <div><div class="tag rv">HİZMETLERİMİZ</div><h2 class="h2 split" style="margin:0">Güvenle planlıyor, sağlam yapılar inşa ediyoruz</h2></div>
+      <p class="rv d2">Kaya Park İnşaat olarak; proje geliştirme, yapım ve teslim süreçlerinin tamamını deneyimli ekiplerimizle planlı, kontrollü ve titiz bir şekilde yönetiyoruz. Modern mühendislik anlayışımızı güçlü saha deneyimimizle birleştirerek, yüksek kalite standartlarına sahip, güvenli ve değer kazandıran yapılar hayata geçiriyoruz.</p>
+    </div>
+    <div class="svc-list" id="svcList">
+      <a class="svc rv" href="https://kayaparkinsaat.com.tr/yarisibizden" data-img="halkali-istasyon-caddesi-qVSUNhnxq5Vq46qJ.jpg"><span class="n">01</span><img class="ic" data-k="yarisi-uTGS75UvnilJXveU.png" data-w="200" alt=""><h3>Yarısı Bizden Proje</h3><p>Devlet destekli kentsel dönüşüm sürecinizi profesyonelce yönetiyoruz. Güvenli, modern ve değerli yaşam alanları inşa ediyoruz.</p><span class="ar">→</span></a>
+      <a class="svc rv" href="https://kayaparkinsaat.com.tr/katkarsiligiinsaat" data-img="y2-VUnLZpv5QVd8ciCx.png"><span class="n">02</span><img class="ic" data-k="kat-karsiligi-0dYaA28Q4YXlwhLE.png" data-w="200" alt=""><h3>Kat Karşılığı Proje</h3><p>Arsanızın potansiyelini doğru proje ile değerli bir yatırıma dönüştürüyoruz. Planlama, ruhsat ve inşaat süreçlerini tek merkezden yönetiyoruz.</p><span class="ar">→</span></a>
+      <a class="svc rv" href="https://kayaparkinsaat.com.tr/projemimarlik" data-img="y5-svviT1YLkOaI13hi.png"><span class="n">03</span><img class="ic" data-k="projemimarlik-tqHcjC7YZVnWXxy1.png" data-w="200" alt=""><h3>Proje &amp; Mimarlık</h3><p>Estetik, fonksiyon ve mühendisliği bir araya getiren projeler tasarlıyoruz. İhtiyaçlarınıza özel modern ve sürdürülebilir yapılar geliştiriyoruz.</p><span class="ar">→</span></a>
+      <a class="svc rv" href="https://kayaparkinsaat.com.tr/anahtartesliminsaat" data-img="kayapark-post-bina-6CdaVqx4JSZ5DnpL.jpg"><span class="n">04</span><img class="ic" data-k="anahtar-teslim-9xzUrzsskR4TeauU.png" data-w="200" alt=""><h3>Anahtar Teslim İnşaat</h3><p>Temelden anahtara kadar tüm inşaat süreçlerini profesyonelce yürütüyoruz. Kaliteli malzeme ve titiz işçilikle projeleri zamanında tamamlıyoruz.</p><span class="ar">→</span></a>
+      <a class="svc rv" href="https://kayaparkinsaat.com.tr/restorasyoninsaat" data-img="ataturk-caddesi-VmeTanm0kZ5stbTP.jpg"><span class="n">05</span><img class="ic" data-k="restorasyion-FMxcOvGLIQsARW2P.png" data-w="200" alt=""><h3>Restorasyon İnşaat</h3><p>Tarihi yapıların özgün dokusunu koruyarak yeniden hayat veriyoruz. Geçmişin mimari değerlerini geleceğe taşıyoruz.</p><span class="ar">→</span></a>
+      <a class="svc rv" href="https://kayaparkinsaat.com.tr/kamusanayiyapilari" data-img="insaatin-kizil-ritmi-kopya-7tLLmblrySwK1vVD.png"><span class="n">06</span><img class="ic" data-k="kamu-ve-sanayi-wG6OzXVAsuWsH21j.png" data-w="200" alt=""><h3>Kamu ve Sanayi Yapıları</h3><p>Kamu ihtiyaçlarına uygun, fabrika, depo ve üretim tesisleri için fonksiyonel yapılar inşa ediyoruz.</p><span class="ar">→</span></a>
+    </div>
+  </div>
+  <div class="svc-float" id="svcFloat"><img alt=""></div>
+</section>
+
+<!-- İSTATİSTİK -->
+<section class="stats">
+  <div class="stats-bg" id="statsBg" data-bg="kayalar-park-anasayfa-RWmLwSO1DhczWbxz.jpg"></div>
+  <div class="wrap">
+    <div class="tag rv">RAKAMLARLA KAYA PARK</div>
+    <h2 class="h2 split" style="color:#fff">Sadece bina değil, güvenli bir gelecek inşa ediyoruz.</h2>
+    <div class="st-grid">
+      <div class="stat rv d1"><b><span class="count" data-to="22">0</span><i>+</i></b><span>Devam Eden Proje</span><i class="lv"></i></div>
+      <div class="stat rv d2"><b><span class="count" data-to="35">0</span><i>+</i></b><span>Tamamlanmış Proje</span><i class="lv"></i></div>
+      <div class="stat rv d3"><b><span class="count" data-to="450">0</span><i>+</i></b><span>Dönüm Proje Alanı</span><i class="lv"></i></div>
+      <div class="stat rv d4"><b><span class="count" data-to="5231">0</span><i>+</i></b><span>Teslim Edilen Konut</span><i class="lv"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- BAŞKANIN MESAJI -->
+<section class="chair">
+  <div class="wrap ch-grid">
+    <div class="ch-img">
+      <div class="wipe"><img data-k="modern-ofiste-karizmatik-yonetici-portresi-kopya-Z6gmisDS5Ny8kZNW.png" data-w="900" alt="Latif Kaya – Kaya Park İnşaat Yönetim Kurulu Başkanı"></div>
+      <div class="nm rv r d3"><h4>Latif Kaya</h4><small>YÖNETİM KURULU BAŞKANI</small></div>
+    </div>
+    <div class="ch-text">
+      <div class="tag rv">BAŞKANIN MESAJI</div>
+      <h2 class="h2 split">Kaya Park'ta her proje bir söz.</h2>
+      <blockquote class="rv d1">Kaya Park İnşaat olarak çıktığımız bu yolda en büyük önceliğimiz; güveni temel alan, kaliteyi benimseyen ve geleceğe değer katan yapılar ortaya koymaktır.</blockquote>
+      <p class="rv d2">Bizim için inşaat, yalnızca binalar inşa etmek değil; insanların huzurla yaşayacağı, güvenle yatırım yapacağı ve geleceğe umutla bakacağı yaşam alanları oluşturmaktır.</p>
+      <p class="rv d3">Her projemizde doğru planlamayı, titiz işçiliği ve sürdürülebilir kalite anlayışını esas alıyoruz. Gelişen teknolojileri ve modern mimari yaklaşımları takip ederek, sektördeki sorumluluğumuzun bilinciyle hareket ediyoruz. Attığımız her adımda müşterilerimizin beklentilerini karşılamayı ve bize duyulan güveni kalıcı bir memnuniyete dönüştürmeyi hedefliyoruz.</p>
+      <div class="sign" id="sign"><img data-k="imzabeyaz-cEpEaiPxnjkUu635.png" data-w="500" alt="Latif Kaya imza"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEDEN KAYA PARK -->
+<section class="why">
+  <div class="wrap why-grid">
+    <div class="why-sticky">
+      <div class="wipe"><img data-k="0-9HNuR45Yemm5Rbnh.png" data-w="900" alt="Neden Kaya Park İnşaat – kaliteli işçilik"></div>
+    </div>
+    <div>
+      <div class="tag rv">NEDEN KAYA PARK?</div>
+      <h2 class="h2 split">Kaliteli işçilik, kalıcı güven.</h2>
+      <p class="rv d1" style="color:#5a5a5a">Bir yapının değerini yalnızca tamamlandığı gün değil, yıllar boyunca sunduğu güven ve yaşam kalitesi belirler. Kaya Park İnşaat olarak projelerimizi sağlamlık, estetik, planlama ve müşteri memnuniyetini bir bütün olarak ele alarak hayata geçiriyoruz.</p>
+      <div class="why-list">
+        <div class="wi rv d1"><img data-k="c6-M2hysNL1T2SMKE8a.png" data-w="140" alt=""><h4>Kaliteli İşçilik</h4><p>Sağlam zemin, güvenli yapılar, huzurlu yaşam alanları.</p></div>
+        <div class="wi rv d2"><img data-k="c2-6dVHzSqpXh48D22e.png" data-w="140" alt=""><h4>Güvenilir Yapı Anlayışı</h4><p>Uzun ömürlü, estetik ve değer katan projeler.</p></div>
+        <div class="wi rv d1"><img data-k="c3-bVHpD9vnpfj4lYjT.png" data-w="140" alt=""><h4>Uzman Ekip</h4><p>Deneyimli kadromuzla her aşamada yanınızdayız.</p></div>
+        <div class="wi rv d2"><img data-k="c4-ew7jfeCE6NpsRLYB.png" data-w="140" alt=""><h4>Sürdürülebilir Yaşam Alanları</h4><p>Çevreye duyarlı, geleceği düşünen projeler.</p></div>
+        <div class="wi rv d1"><div class="mono">₺</div><h4>Yatırım Değeri</h4><p>Bugünün ve yarının kazançlı projeleri.</p></div>
+        <div class="wi rv d2"><img data-k="c5-t94yLHO1jvlGVB8D.png" data-w="140" alt=""><h4>Planlı Süreç</h4><p>Zamanında, şeffaf ve kontrollü yönetim.</p></div>
+        <div class="wi rv d1" style="grid-column:1/-1"><img data-k="a3-QVgGUzDh5Z3NFcjC.png" data-w="140" alt=""><h4>Modern Mimari</h4><p>Estetik, fonksiyonellik ve çağdaş tasarımı bir araya getiriyoruz.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SÜRDÜRÜLEBİLİRLİK -->
+<section class="sus">
+  <div class="wrap">
+    <div class="tag rv">SÜRDÜRÜLEBİLİRLİK</div>
+    <h2 class="h2 split">Güvenli Yapılar, Sürdürülebilir Gelecek</h2>
+    <div class="sus-grid">
+      <div class="su rv d1"><div class="ic"><svg viewBox="0 0 48 48"><path d="M6 42h36M10 42V20L24 8l14 12v22M19 42V30h10v12"/></svg></div><h3>Geleceğe Duyarlı Yapılar</h3><p>Çevresel etkileri gözeterek, kaynakları verimli kullanan ve gelecek nesillere değer katan projeler geliştiriyoruz.</p></div>
+      <div class="su rv d2"><div class="ic"><svg viewBox="0 0 48 48"><path d="M27 4L9 28h14l-2 16 18-24H25l2-16z"/></svg></div><h3>Enerji Verimli Çözümler</h3><p>Enerji tüketimini azaltan, kullanıcı konforunu artıran ve işletme maliyetlerini düşüren çözümleri projelerimize dahil ediyoruz.</p></div>
+      <div class="su rv d3"><div class="ic"><svg viewBox="0 0 48 48"><path d="M24 4l16 8v12c0 10-7 17-16 20C15 41 8 34 8 24V12l16-8z"/><path d="M16 24l6 6 10-12"/></svg></div><h3>Kalıcı Kalite Anlayışı</h3><p>Doğru malzeme ve kaliteli işçilikle, uzun yıllar güvenle kullanılabilecek dayanıklı yapılar inşa ediyoruz.</p></div>
+      <div class="su rv d1"><div class="ic"><svg viewBox="0 0 48 48"><path d="M4 36h40M8 36a16 16 0 0132 0M24 12v8M18 20h12M14 36v-6M34 36v-6"/></svg></div><h3>Güvenli Çalışma Kültürü</h3><p>Şantiyelerimizde iş sağlığı ve güvenliğini önceliklendiriyor, güvenli çalışma standartlarını titizlikle uyguluyoruz.</p></div>
+      <div class="su rv d2"><div class="ic"><svg viewBox="0 0 48 48"><path d="M6 6h36v36H6zM6 18h36M18 42V18M30 18v24"/></svg></div><h3>Mühendislik ve Standartlar</h3><p>Projelerimizi güncel yönetmelik ve teknik standartlara uygun şekilde planlayarak sağlam ve güvenilir yapılar üretiyoruz.</p></div>
+      <div class="su rv d3"><div class="ic"><svg viewBox="0 0 48 48"><path d="M22 40C12 40 8 32 8 26 8 14 18 8 40 6c-2 24-8 34-18 34zM8 42c6-10 12-16 20-20"/></svg></div><h3>Çevreye Saygılı Üretim</h3><p>İnşaat süreçlerimizde çevresel etkileri azaltıyor, doğal kaynakların korunmasına ve sürdürülebilir üretime önem veriyoruz.</p></div>
+      <div class="su wide rv z"><h3>Güvenli Gelecek İçin</h3><p>Bugünün ihtiyaçlarını karşılarken yarının şehirlerini düşünüyor, güvenli ve sürdürülebilir yapılarla geleceğe katkı sağlıyoruz.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- YORUMLAR -->
+<section class="testi">
+  <div class="wrap t-grid">
+    <div class="t-img"><div class="wipe"><img data-k="ekran-goruntusu-136-kopya-p9sN4nVTV84IWEJQ.png" data-w="800" alt="Kaya Park İnşaat müşteri deneyimleri"></div></div>
+    <div>
+      <div class="tag rv">DENEYİMLER</div>
+      <h2 class="h2 split">Müşterilerimiz ne diyor?</h2>
+      <div class="t-stage" id="tStage">
+        <div class="tq"><div class="stars">★★★★★</div><h3>“İşçilik Gerçekten Mükemmel”</h3><p>Yapının her detayında kaliteyi hissediyorsunuz. İşçilik, kullanılan malzemeler ve ince detaylara gösterilen özen gerçekten çok başarılı. Kaya Park’ı tercih ettiğimiz için çok memnunuz.</p><div class="who"><i>AA</i><div><b>Abdullah Aslan</b><small>Küçükçekmece, İstasyon</small></div></div></div>
+        <div class="tq"><div class="stars">★★★★★</div><h3>“Söz Verdikleri Tarihte Teslim Ettiler”</h3><p>Kaya Park ile çalışırken en çok memnun kaldığımız konu işin başından sonuna kadar planlı ilerlemeleriydi. İnşaatı söyledikleri tarihten bile önce tamamladılar. Süreç boyunca ne konuştuysak aynısını uyguladılar. Özellikle Latif Kaya Bey’in ilgisi ve çözüm odaklı yaklaşımı gerçekten takdire değer.</p><div class="who"><i>AS</i><div><b>Ayşe Elbir Sayan</b><small>Küçükçekmece, İstasyon</small></div></div></div>
+        <div class="tq"><div class="stars">★★★★★</div><h3>“Bugün Yine Olsa Yine Kaya Park”</h3><p>Kaya Park ile çalışmak bizim için oldukça güzel bir deneyimdi. İşin başından teslimine kadar her konuda ilgilendiler ve söyledikleri zamanda teslim ettiler. Yıllar geçmesine rağmen yapının kalitesini koruması, verdiğimiz kararın ne kadar doğru olduğunu gösteriyor. Latif Bey’e ve tüm Kaya Park ekibine emekleri için teşekkür ediyoruz.</p><div class="who"><i>TÇ</i><div><b>Tevabil Çerkes</b><small>Küçükçekmece, İstasyon</small></div></div></div>
+        <div class="tq"><div class="stars">★★★★★</div><h3>“10 Yıl Geçti, Yapı Hâlâ İlk Günkü Gibi”</h3><p>Kaya Park’ın yaptığı yapımızın üzerinden yaklaşık 10 yıl geçti. Buna rağmen binamızın sağlamlığı, dış görünümü ve işçiliği hâlâ ilk günkü gibi. O dönemde neden Kaya Park’ı tercih ettiğimizi bugün çok daha iyi anlıyoruz.</p><div class="who"><i>HK</i><div><b>Hasan Kartal</b><small>Küçükçekmece, İstasyon</small></div></div></div>
+      </div>
+      <div class="t-nav"><button id="tPrev" aria-label="Önceki">←</button><button id="tNext" aria-label="Sonraki">→</button><span class="tc" id="tCount">01 / 04</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÇÖZÜM ORTAKLARI -->
+<section class="partners">
+  <div class="tag rv">ÇÖZÜM ORTAKLARIMIZ</div>
+  <h2 class="rv d1">Güçlü Markalarla Birlikte</h2>
+  <div class="marquee" id="mq1"></div>
+  <div class="marquee rev" id="mq2"></div>
+</section>
+
+<!-- İLETİŞİM -->
+<section class="contact" id="iletisim">
+  <div class="wrap c-grid">
+    <div>
+      <div class="tag rv">İLETİŞİM</div>
+      <h2 class="h2 split">Müşteri Hizmetleri</h2>
+      <p class="rv d1" style="color:#5a5a5a">Kaya Park İnşaat olarak sorularınızı yanıtlamak, taleplerinizi değerlendirmek ve projelerimiz hakkında size bilgi vermek için buradayız.</p>
+      <div class="c-cards">
+        <a class="cc rv d1" href="tel:+905326771100"><img data-k="u1-g9G486xcE2LaZ2Z7.png" data-w="120" alt="Telefon"><small>TELEFON</small><b>0532 677 11 00<br>0532 543 25 62</b></a>
+        <a class="cc rv d2" href="mailto:kayaparkinsaat@gmail.com"><img data-k="u2-FL70h75lpccV0OQ7.png" data-w="120" alt="E-posta"><small>MAIL</small><b>kayaparkinsaat@gmail.com</b></a>
+        <a class="cc rv d1" href="https://www.google.com/maps/search/?api=1&query=%C4%B0stasyon+Mah.+1.+Sar%C4%B1%C3%A7am+Sok.+No%3A10+K%C3%BC%C3%A7%C3%BCk%C3%A7ekmece" target="_blank"><img data-k="u3-3OpeIxc63gihHAnB.png" data-w="120" alt="Konum"><small>KONUM</small><b>İstasyon Mah. 1. Sarıçam Sok. No:8-10 Küçükçekmece / İstanbul</b></a>
+        <div class="cc rv d2"><img data-k="u4-nZxCgnQX2zt2NoBj.png" data-w="120" alt="Çalışma saatleri"><small>ÇALIŞMA SAATLERİ</small><b>Sabah 09.00 - Akşam 17.00</b></div>
+      </div>
+    </div>
+    <div class="map rv r">
+      <iframe loading="lazy" title="Kaya Park İnşaat konum" src="https://www.google.com/maps?q=%C4%B0stasyon+Mah.+1.+Sar%C4%B1%C3%A7am+Sok.+No:10+K%C3%BC%C3%A7%C3%BCk%C3%A7ekmece+%C4%B0stanbul&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-bg" data-bg="insaat-muhendisi_-cift-pozlama-kopya-asd-eSP947ODjWW8qavT.png"></div>
+  <div class="wrap">
+    <h2 class="split">Kentsel dönüşüm ve projeniz için hemen bizimle iletişime geçin.</h2>
+    <div style="display:flex;gap:14px;flex-wrap:wrap" class="rv r">
+      <a class="btn btn-red" href="tel:+905326771100" data-cur>0532 677 11 00</a>
+      <a class="btn btn-ghost" href="https://wa.me/905326771100" target="_blank" data-cur>WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <img class="flogo" data-k="beyaz-ME0mtXlXB2IDEoK2.png" data-w="400" alt="Kaya Park İnşaat">
+        <p>Güvenli yapılar, mutlu yarınlar. Şehrin geleceğine bugünden iz bırakıyoruz.</p>
+        <h4 style="margin-top:28px">Bizi Sosyal Medya'da Takip Edin</h4>
+        <div class="socials">
+          <a href="https://www.instagram.com/kayalarparkins/" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM12 2c-2.7 0-3 0-4.1.1C3.6 2.3 2.3 3.6 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.2 4.3 1.5 5.6 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c4.3-.2 5.6-1.5 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.2-4.3-1.5-5.6-5.8-5.8C15 2 14.7 2 12 2z"/></svg></a>
+          <a href="https://wa.me/905326771100" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 00-10.3 18L0 24l6.2-1.6A12 12 0 1012 0zm5.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.7-1c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/></svg></a>
+          <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1 1-1h3V1h-4c-3.6 0-5 2.7-5 5.3V8H6v4h3v11h5V12h3.4l.6-4h-4z"/></svg></a>
+          <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+        </div>
+      </div>
+      <div><h4>Menüler</h4><ul><li><a href="#anasayfa">Anasayfa</a></li><li><a href="#kaya-park">Kaya Park</a></li><li><a href="#hizmetlerimiz">Hizmetlerimiz</a></li><li><a href="#projeler">Projeler</a></li><li><a href="https://kayaparkinsaat.com.tr/sorular">Sıkça Sorulan Sorular</a></li><li><a href="#iletisim">İletişim</a></li></ul></div>
+      <div><h4>Adres</h4><p>İstasyon Mah. 1. Sarıçam Sok. No:8-10<br>Küçükçekmece / İstanbul</p><p style="margin-top:14px">Sabah 09.00 - Akşam 17.00</p></div>
+      <div><h4>İletişim</h4><ul><li><a href="tel:+905326771100">0532 677 11 00</a></li><li><a href="tel:+905325432562">0532 543 25 62</a></li><li><a href="mailto:kayaparkinsaat@gmail.com">kayaparkinsaat@gmail.com</a></li></ul></div>
+    </div>
+  </div>
+  <div class="f-big">KAYA PARK</div>
+  <div class="copy">Kaya Park İnşaat - Tüm Hakkı Saklıdır © 2026</div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb"><button class="x" id="lbX" aria-label="Kapat">✕</button><button class="pv" id="lbP" aria-label="Önceki">←</button><div><img id="lbImg" alt=""><p id="lbT"></p></div><button class="nx" id="lbN" aria-label="Sonraki">→</button></div>
+
+<a class="wa" href="https://wa.me/905326771100" target="_blank" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 00-10.3 18L0 24l6.2-1.6A12 12 0 1012 0zm5.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.7-1c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.7.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/></svg></a>
+
+<script>
+/* ---------- Görsel yardımcıları (Kaya Park sitesinin kendi görsel sunucusu) ---------- */
+const CDN='https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=%W%,fit=crop/MpWnqdGHvgnUKbie/';
+const IMG=(k,w=1200)=>CDN.replace('%W%',w)+k;
+document.querySelectorAll('img[data-k]').forEach(i=>{i.src=IMG(i.dataset.k,i.dataset.w||1200);i.referrerPolicy='no-referrer';if(!i.closest('header,#loader'))i.loading='lazy'});
+document.querySelectorAll('[data-bg]').forEach(e=>e.style.backgroundImage=`url("${IMG(e.dataset.bg,1920)}")`);
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- Kafes (lattice) çizici ---------- */
+function lattice(g,x1,x2,yTop,yBot,step,vertical){
+  let d='';
+  if(vertical){d+=`M${x1} ${yTop}V${yBot}M${x2} ${yTop}V${yBot}`;for(let y=yTop;y<yBot;y+=step){d+=`M${x1} ${y}L${x2} ${y+step}M${x2} ${y}L${x1} ${y+step}M${x1} ${y}H${x2}`}}
+  else{for(let x=x1;x<x2;x+=step){d+=`M${x} ${yTop}L${x+step/2} ${yBot}L${x+step} ${yTop}`}}
+  const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',d);g.appendChild(p);
+}
+lattice($('#ldMast'),262,302,92,520,34,true);
+lattice($('#ldJib'),30,540,70,92,22,false);
+lattice($('#hcMast'),304,340,216,900,36,true);
+lattice($('#hcJib'),-20,470,160,180,20,false);
+
+/* ---------- Preloader ---------- */
+(function(){
+  let p=0;const el=$('#pct');const t0=performance.now();
+  const tick=()=>{const e=performance.now()-t0;p=Math.min(100,Math.round(e/26));el.textContent=p;if(p<100)requestAnimationFrame(tick);else finish()};
+  requestAnimationFrame(tick);
+  function finish(){
+    document.body.classList.add('opening');
+    setTimeout(()=>{$('#loader').style.display='none';document.body.classList.remove('lock');document.body.classList.add('ready');startHero()},620);
+  }
+})();
+
+/* ---------- Hero slayt gösterisi ---------- */
+const heroImgs=['chatgpt-image-8-tem-2026-18_00_47-hOZvM4NaZ0jpyoQd.png','gemini_generated_image_noxjwrnoxjwrnoxj-TicMw8MdN7T4pfcu.png','y3-3QaPHDyAE60p6uxh.png','kayalar-park-anasayfa-RWmLwSO1DhczWbxz.jpg','y5-svviT1YLkOaI13hi.png'];
+const slides=$('#slides');
+heroImgs.forEach((k,i)=>{const d=document.createElement('div');d.className='slide';d.style.backgroundImage=`url("${IMG(k,1920)}")`;slides.appendChild(d)});
+let si=0;
+function startHero(){show(0);setInterval(()=>show((si+1)%heroImgs.length),6000)}
+function show(n){const s=slides.children;s[si].classList.remove('on');si=n;s[si].classList.add('on');$('#slNum').textContent=String(n+1).padStart(2,'0');const b=$('#slBar');b.classList.remove('run');void b.offsetWidth;b.classList.add('run')}
+
+/* ---------- Toz + kaynak kıvılcımı (canvas) ---------- */
+(function(){
+  const c=$('#dust'),x=c.getContext('2d');let W,H,parts=[],sparks=[];
+  const rs=()=>{W=c.width=c.offsetWidth*devicePixelRatio;H=c.height=c.offsetHeight*devicePixelRatio};rs();addEventListener('resize',rs);
+  for(let i=0;i<90;i++)parts.push({x:Math.random(),y:Math.random(),r:Math.random()*2+.4,vx:(Math.random()-.3)*.00025,vy:-Math.random()*.0003-.00005,a:Math.random()*.5+.15});
+  function weld(){ // kaynak kıvılcımı patlaması
+    const ox=W*(.62+Math.random()*.25),oy=H*(.45+Math.random()*.35);
+    for(let i=0;i<34;i++){const a=Math.random()*Math.PI*2,s=(Math.random()*4+1.5)*devicePixelRatio;sparks.push({x:ox,y:oy,vx:Math.cos(a)*s,vy:Math.sin(a)*s-2,l:1})}
+    setTimeout(weld,2200+Math.random()*3500);
+  }
+  if(!RM)setTimeout(weld,3500);
+  (function loop(){
+    x.clearRect(0,0,W,H);
+    parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;if(p.y<-.02){p.y=1.02;p.x=Math.random()}if(p.x>1.02)p.x=-.02;
+      x.beginPath();x.arc(p.x*W,p.y*H,p.r*devicePixelRatio,0,7);x.fillStyle=`rgba(255,${190+Math.random()*30|0},140,${p.a})`;x.fill()});
+    sparks=sparks.filter(s=>s.l>0);
+    sparks.forEach(s=>{s.x+=s.vx;s.y+=s.vy;s.vy+=.18*devicePixelRatio;s.l-=.022;
+      x.strokeStyle=`rgba(255,${180+s.l*70|0},${60*s.l|0},${s.l})`;x.lineWidth=1.6*devicePixelRatio;x.beginPath();x.moveTo(s.x,s.y);x.lineTo(s.x-s.vx*2.2,s.y-s.vy*2.2);x.stroke()});
+    if(sparks.length){const g=x.createRadialGradient(sparks[0].x,sparks[0].y,0,sparks[0].x,sparks[0].y,60*devicePixelRatio);g.addColorStop(0,'rgba(255,220,160,.25)');g.addColorStop(1,'rgba(255,220,160,0)');x.fillStyle=g;x.fillRect(0,0,W,H)}
+    requestAnimationFrame(loop);
+  })();
+})();
+
+/* ---------- Emniyet şeritleri ---------- */
+const tapeTxt=['GÜVENLİ YAPILAR','MUTLU YARINLAR','30+ YILLIK DENEYİM','KENTSEL DÖNÜŞÜM','ANAHTAR TESLİM','KAT KARŞILIĞI'];
+const tapeTxt2=['DİKKAT ŞANTİYE','KAYA PARK İNŞAAT','İŞ GÜVENLİĞİ ÖNCELİĞİMİZ','5231+ TESLİM EDİLEN KONUT','YARISI BİZDEN'];
+function tape(id,arr){const r=$(id),h=arr.map(t=>`<span>${t}</span>`).join('');r.innerHTML=h+h;r.parentElement.appendChild(r.cloneNode(true))}
+tape('#tape1',tapeTxt);tape('#tape2',tapeTxt2);
+
+/* ---------- Kelime kelime başlıklar ---------- */
+$$('.split').forEach(h=>{h.innerHTML=h.textContent.trim().split(/\s+/).map((w,i)=>`<span class="sw"><i style="transition-delay:${i*.06}s">${w}</i></span>`).join(' ')});
+
+/* ---------- Görünür olunca animasyon ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+$$('.rv,.wipe,.split,.sign,.su,.stat').forEach(el=>io.observe(el));
+
+/* ---------- Sayaçlar ---------- */
+const co=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.to,t0=performance.now();
+  const st=t=>{const p=Math.min((t-t0)/2200,1),v=Math.floor(to*(1-Math.pow(1-p,4)));el.textContent=v.toLocaleString('tr-TR');if(p<1)requestAnimationFrame(st)};requestAnimationFrame(st);co.unobserve(el)}),{threshold:.6});
+$$('.count').forEach(el=>co.observe(el));
+
+/* ---------- Bina kat kat yükseliyor (SVG) ---------- */
+const NS='http://www.w3.org/2000/svg',bs=$('#bsvg'),FL=11,FH=50,BX=150,BW=300,GY=650;
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(p||bs).appendChild(e);return e}
+el('rect',{x:0,y:GY,width:600,height:50,fill:'#141416'});
+el('rect',{x:BX-40,y:GY-8,width:BW+80,height:12,fill:'#2a2a2d'}); // temel
+// iskele
+const scaf=el('g',{stroke:'#e8c34a','stroke-width':1.2,opacity:.75});
+const floors=[];
+for(let i=0;i<FL;i++){
+  const y=GY-8-(i+1)*FH, g=el('g',{class:'fl',style:`transform:translateY(-60px);opacity:0`});
+  el('rect',{x:BX,y:y,width:BW,height:FH,fill:i===FL-1?'#C1272D':'#2b2c30',stroke:'#3c3d42'},g);
+  el('rect',{x:BX-6,y:y+FH-6,width:BW+12,height:6,fill:'#45464b'},g); // döşeme
+  if(i<FL-1){for(let w=0;w<6;w++){el('rect',{class:'win',x:BX+16+w*47,y:y+12,width:30,height:24,fill:'#1a1b1e'},g)}
+    el('rect',{x:BX+BW-8,y:y+10,width:14,height:30,fill:'#1d1e20',stroke:'#555'},g)}
+  else{el('text',{x:BX+BW/2,y:y+33,'text-anchor':'middle',fill:'#fff','font-family':'Oswald','font-size':22,'letter-spacing':4},g).textContent='KAYA PARK'}
+  floors.push(g);
+}
+for(let i=0;i<=FL;i++){const y=GY-8-i*FH;el('line',{x1:BX-24,y1:y,x2:BX-24,y2:y-FH},scaf);el('line',{x1:BX-40,y1:y,x2:BX-8,y2:y},scaf);el('line',{x1:BX-40,y1:y,x2:BX-8,y2:y-FH},scaf)}
+el('line',{x1:BX-40,y1:GY,x2:BX-40,y2:GY-8-FL*FH},scaf);
+// mini vinç
+const bc=el('g',{});
+el('rect',{x:500,y:80,width:10,height:570,fill:'none',stroke:'#666'},bc);
+el('path',{d:'M380 80H560M505 40L380 80M505 40L560 80',stroke:'#888',fill:'none'},bc);
+const bHook=el('line',{x1:420,y1:80,x2:420,y2:200,stroke:'#999'},bc);
+el('circle',{cx:505,cy:36,r:4,fill:'#ff2a2a',class:'beacon'},bc);
+const wins=[...bs.querySelectorAll('.win')];
+function buildUpdate(){
+  const s=$('#build'),r=s.getBoundingClientRect();
+  let p=innerWidth<=1000?Math.min(1,Math.max(0,(innerHeight-r.top)/(r.height+innerHeight*.2))):Math.min(1,Math.max(0,-r.top/(r.height-innerHeight)));
+  const built=p*FL*1.15;
+  floors.forEach((f,i)=>{const k=Math.min(1,Math.max(0,built-i));f.style.transform=`translateY(${-60*(1-k)}px)`;f.style.opacity=k});
+  const top=Math.min(FL,Math.ceil(built));bHook.setAttribute('y2',Math.max(90,GY-8-top*FH-30));
+  scaf.style.opacity=p>.92?Math.max(0,1-(p-.92)*12):.75;
+  wins.forEach((w,i)=>w.setAttribute('fill',p>.8&&((i*37)%10)/10<(p-.8)*5?'#ffcf7a':'#1a1b1e'));
+  $('#bPct').textContent=Math.round(p*100);
+  $('#bsky').style.setProperty('--sky',p);
+  const ph=Math.min(3,Math.floor(p*4.2));$$('#phase li').forEach((l,i)=>l.classList.toggle('on',i<=ph));
+}
+
+/* ---------- Projeler (yatay galeri) ---------- */
+const projects=[
+ ['y6-ULKXa6fgzFWOrvIb.png','Kaya Life','KONUT PROJESİ','kaya'],
+ ['y5-svviT1YLkOaI13hi.png','Kaya House','KONUT PROJESİ','kaya'],
+ ['y4-2d8VIV8gRxe8irjt.png','Kaya Moon','KONUT PROJESİ','kaya'],
+ ['y3-3QaPHDyAE60p6uxh.png','Kaya Prestige','KONUT PROJESİ','kaya'],
+ ['y2-VUnLZpv5QVd8ciCx.png','Kaya Gold','KONUT PROJESİ','kaya'],
+ ['y1-pswb7i7qc4HoMQPi.png','Kaya Royal','KONUT PROJESİ','kaya'],
+ ['a1-rtSTJZfhbAyJAICx.jpg','Genç Osman Sk.','İSTASYON MAHALLESİ','cont'],
+ ['a2-UUU3YY6PCgbfSYdN.jpg','İstasyon Mahallesi','ŞANTİYE','cont'],
+ ['a3-lchmQRS1MbX5zckW.jpg','İstasyon Mahallesi','ŞANTİYE','cont'],
+ ['yarimburgaz-caddesi-VfCXVkkAHtMd8WDt.jpg','Yarımburgaz Cd.','İSTASYON MAHALLESİ','done'],
+ ['ataturk-caddesi-VmeTanm0kZ5stbTP.jpg','Atatürk Cd.','İSTASYON MAHALLESİ','done'],
+ ['04-gSn9AMZKJGe1PplJ.jpg','Namık Kemal Cd.','İSTASYON MAHALLESİ','done'],
+ ['kayapark-post-bina-6CdaVqx4JSZ5DnpL.jpg','Park Sokak','İSTASYON MAHALLESİ','done'],
+ ['03-9Xl1tnokI50Qpn6b.jpg','Namık Kemal Cd.','İSTASYON MAHALLESİ','done'],
+ ['halkali-istasyon-caddesi-qVSUNhnxq5Vq46qJ.jpg','Halkalı İstasyon Cd.','İSTASYON MAHALLESİ','done'],
+ ['cayirduzu-sokak-4HXicjE5c7CBfAAg.jpg','Çayırdüzü Sk.','İSTASYON MAHALLESİ','done'],
+ ['cinarli-sokak-YrakMn742lbyxJak.jpg','Çınarlı Sk.','İSTASYON MAHALLESİ','done'],
+ ['genc-osman-sokak-2-mqKsHaFG3NEDSIkB.jpg','Genç Osman Sk.','İSTASYON MAHALLESİ','done']
+];
+const stLbl={kaya:['PROJE',''],cont:['DEVAM EDEN',''],done:['TAMAMLANDI','done']};
+const track=$('#hsTrack');
+track.innerHTML=projects.map((p,i)=>`<div class="pcard" data-f="${p[3]}" data-i="${i}" data-cur><img src="${IMG(p[0],900)}" referrerpolicy="no-referrer" loading="lazy" alt="${p[1]} – Kaya Park İnşaat"><span class="st ${stLbl[p[3]][1]}">${stLbl[p[3]][0]}</span><span class="zoom">⤢</span><div class="pc"><small>${p[2]}</small><h3>${p[1]}</h3></div></div>`).join('')+'<div style="flex-shrink:0;width:4vw"></div>';
+const hs=$('#projeler');
+function hsSize(){ if(innerWidth<=1000){hs.style.height='auto';track.style.transform='';track.style.overflowX='auto';return}
+  track.style.overflowX='visible';hs.style.height=(track.scrollWidth-innerWidth+innerHeight)+'px'}
+function hsUpdate(){ if(innerWidth<=1000)return;const r=hs.getBoundingClientRect(),max=track.scrollWidth-innerWidth;const p=Math.min(1,Math.max(0,-r.top/(hs.offsetHeight-innerHeight)));track.style.transform=`translateX(${-p*max}px)`;$('#hsProg').style.width=p*100+'%'}
+$$('#tabs button').forEach(b=>b.onclick=()=>{$$('#tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;$$('.pcard').forEach(c=>c.classList.toggle('dim',f!=='all'&&c.dataset.f!==f))});
+// 3D eğim
+function tilt(el,amt=8){el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;el.style.transform=`perspective(900px) rotateY(${(x-.5)*amt}deg) rotateX(${(.5-y)*amt}deg)`;el.style.setProperty('--mx',x*100+'%');el.style.setProperty('--my',y*100+'%')});el.addEventListener('mouseleave',()=>el.style.transform='')}
+$$('.pcard').forEach(c=>tilt(c,10));$$('.tilt').forEach(c=>tilt(c,6));
+
+/* ---------- Lightbox ---------- */
+let li=0;const lb=$('#lb');
+function openLb(i){li=(i+projects.length)%projects.length;$('#lbImg').src=IMG(projects[li][0],1600);$('#lbT').textContent=projects[li][1]+' · '+projects[li][2];lb.classList.add('on')}
+$$('.pcard').forEach(c=>c.onclick=()=>openLb(+c.dataset.i));
+$('#lbX').onclick=()=>lb.classList.remove('on');$('#lbP').onclick=()=>openLb(li-1);$('#lbN').onclick=()=>openLb(li+1);
+lb.onclick=e=>{if(e.target===lb)lb.classList.remove('on')};
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')openLb(li-1);if(e.key==='ArrowRight')openLb(li+1)});
+
+/* ---------- Önce / Sonra ---------- */
+(function(){const b=$('#baBox');let drag=false;
+  const set=x=>{const r=b.getBoundingClientRect();b.style.setProperty('--p',Math.min(100,Math.max(0,(x-r.left)/r.width*100))+'%')};
+  b.addEventListener('pointerdown',e=>{drag=true;b.setPointerCapture(e.pointerId);set(e.clientX)});
+  b.addEventListener('pointermove',e=>{if(drag)set(e.clientX)});
+  b.addEventListener('pointerup',()=>drag=false);
+  // görünce kendi kendine bir kez gidip gelir
+  new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();let t0=performance.now();const an=t=>{const k=(t-t0)/2400;if(k>1||drag)return;b.style.setProperty('--p',(50+Math.sin(k*Math.PI*2)*30)+'%');requestAnimationFrame(an)};requestAnimationFrame(an)}},{threshold:.6}).observe(b);
+})();
+
+/* ---------- Hizmetler: imleci takip eden görsel ---------- */
+const sf=$('#svcFloat'),sfi=sf.querySelector('img');
+$$('.svc').forEach(s=>{s.addEventListener('mouseenter',()=>{sfi.src=IMG(s.dataset.img,700);sf.classList.add('on')});s.addEventListener('mouseleave',()=>sf.classList.remove('on'))});
+addEventListener('mousemove',e=>{sf.style.left=e.clientX+170+'px';sf.style.top=e.clientY+'px'});
+
+/* ---------- Yorumlar ---------- */
+const tqs=$$('.tq');let ti=0,tt;
+function tShow(n){tqs[ti].classList.remove('on');ti=(n+tqs.length)%tqs.length;tqs[ti].classList.add('on');$('#tCount').textContent=String(ti+1).padStart(2,'0')+' / 04';clearInterval(tt);tt=setInterval(()=>tShow(ti+1),7000)}
+$('#tPrev').onclick=()=>tShow(ti-1);$('#tNext').onclick=()=>tShow(ti+1);tqs[0].classList.add('on');tt=setInterval(()=>tShow(ti+1),7000);
+
+/* ---------- Çözüm ortakları ---------- */
+const logos=['g2-joc2GqrLrbMo32Xz','g3-fZmfx5LpLroUkqbR','g6-B1isA3W4vTQpn2BW','g7-e74IGqeT2TsbiL2v','kale-seramik-zarhV6UDMhbTlvwf','vitra-GxHgElJnHCc9Pr3J','g19-Q0TTmbWhZdcJWK97','g4-i4P2z5LJBiMneyY5','g17-dZRmgiiOO3T4SqmS','g18-qQrOHhGnqSbxgPYa','winsa-g46uLTDpTKs1tC9s','g20-TMne0cVj1Z1Tcz2X','g21-UK5KpkgQ0DrOPhUU','g5-aEb3FfOmxBblJa0g','g8-oQUAcXjwtOOEkbaQ','g9-aX0q4WXCVtsdNEu4','g12-1HbeeEwLor4azcOw','sisecam-QhTLvYR34nywZSs6','agt-camsan-HSPI0uYYpXM3uNc9','g11-zTq0OVpiodtK5Bo8','g10-vVHGNFahY0Bn1sVD','g13-BVuL5k8JEB4wBzQk','g14-O0jEE2IvMnx8USyB','g15-ibj7WtQ3mYRDpahI','g16-bHWHk97DbzDSdOGl'];
+function fill(id,list){const h=list.map(l=>`<div><img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,h=160,fit=scale-down/MpWnqdGHvgnUKbie/${l}.jpg" referrerpolicy="no-referrer" alt="Çözüm ortağı" loading="lazy"></div>`).join('');$(id).innerHTML=`<div class="mq">${h}</div><div class="mq" aria-hidden="true">${h}</div>`}
+fill('#mq1',logos.slice(0,13));fill('#mq2',logos.slice(13));
+
+/* ---------- Özel imleç ---------- */
+(function(){const c=$('#cur'),d=$('#curDot');let mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px'});
+  (function l(){cx+=(mx-cx)*.16;cy+=(my-cy)*.16;c.style.left=cx+'px';c.style.top=cy+'px';requestAnimationFrame(l)})();
+  document.addEventListener('mouseover',e=>{c.classList.toggle('big',!!e.target.closest('.pcard,#baBox'))});
+})();
+
+/* ---------- Kaydırma: header, ilerleme, paralaks, vinç, bina ---------- */
+const hdr=$('#hdr'),prog=$('#progress'),crane=$('#heroCrane'),sbg=$('#statsBg');let lastY=0;
+function onScroll(){
+  const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  hdr.classList.toggle('scrolled',y>60);
+  hdr.classList.toggle('hide',y>lastY&&y>innerHeight&&!$('#nav').classList.contains('open'));lastY=y;
+  prog.style.width=(y/h*100)+'%';
+  if(y<innerHeight){crane.style.transform=`translateY(${y*.25}px)`;slides.style.transform=`translateY(${y*.4}px)`}
+  const sr=sbg.parentElement.getBoundingClientRect();if(sr.top<innerHeight&&sr.bottom>0)sbg.style.transform=`translateY(${(sr.top-innerHeight/2)*-.15}px)`;
+  buildUpdate();hsUpdate();
+}
+addEventListener('scroll',onScroll,{passive:true});
+addEventListener('resize',()=>{hsSize();onScroll()});
+addEventListener('load',()=>{hsSize();onScroll()});
+hsSize();onScroll();
+// fare ile vinç paralaksı
+addEventListener('mousemove',e=>{if(scrollY>innerHeight)return;const k=(e.clientX/innerWidth-.5);crane.style.translate=`${k*-30}px 0`});
+
+/* ---------- Mobil menü ---------- */
+const burger=$('#burger'),nav=$('#nav');
+burger.onclick=()=>{burger.classList.toggle('on');nav.classList.toggle('open')};
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('on');nav.classList.remove('open')}));
+</script>
+</body>
+</html>
